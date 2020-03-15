@@ -40,10 +40,10 @@
 	<div class="collapse navbar-collapse" id="topbar">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="#casos">Casos registrados</a></li>
-	<li class="nav-item"><a class="nav-link" href="#ingresos">Ingresos en la <abbr title="Unidad de cuidados intensivos">UCI</abbr></a></li>
-      <li class="nav-item"><a class="nav-link" href="#fallecimientos">Fallecimientos</a></li>
-    </ul>
-</div>
+			<li class="nav-item"><a class="nav-link" href="#ingresos">Ingresos en la <abbr title="Unidad de cuidados intensivos">UCI</abbr></a></li>
+			<li class="nav-item"><a class="nav-link" href="#fallecimientos">Fallecimientos</a></li>
+		</ul>
+	</div>
 </nav>
 <div class="container-xl">
 <div class="row">
@@ -59,32 +59,59 @@
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col-12">Número de casos registrados</h2>
-			<div class="col-12">
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="#casosTotal" aria-expanded="false" aria-controls="casosTotal">Total de casos</button></li>
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="#casosRelativo" aria-expanded="false" aria-controls="casosRelativo">Casos/100.000 hab.</button></li>
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="#casosSmallMultiples" aria-expanded="false" aria-controls="casosSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosTotal" aria-expanded="false" aria-controls="casosTotal">Total de casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosRelativo" aria-expanded="false" aria-controls="casosRelativo">Casos/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiples" aria-expanded="false" aria-controls="casosSmallMultiples">Small Multiples</button></li>
 				</ul>
 			</div>
 		</header>
 
-		<div class="row">
-			<div class="col-lg-9 collapse show" id="casosTotal">
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show casosTotal">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Escala logarítmica</figcaption>
 			</figure>
 			</div>
-			<div class="col-lg-9 collapse" id="casosRelativo">
+			<div class="col-lg-9 graph collapse casosRelativo">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala logarítmica</figcaption>
 			</figure>
 			</div>
-			<div class="col-lg-9 collapse" id="casosSmallMultiples">
+			<div class="col-lg-9 graph collapse casosSmallMultiples">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-9 graph show casosTotal">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
 			</figure>
 			</div>
 		</div>
@@ -95,31 +122,58 @@
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col">Ingresos en la UCI</h2>
-			<div class="col-12">
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="#uciTotal" aria-expanded="false" aria-controls="uciTotal">Total de ingresos</button></li>
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="#uciRelativo" aria-expanded="false" aria-controls="uciRelativo">Ingresos/100.000 hab.</button></li>
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="#uciSmallMultiples" aria-expanded="false" aria-controls="uciSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="uciTotal" aria-expanded="false" aria-controls="uciTotal">Total de ingresos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciRelativo" aria-expanded="false" aria-controls="uciRelativo">Ingresos/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciSmallMultiples" aria-expanded="false" aria-controls="uciSmallMultiples">Small Multiples</button></li>
 				</ul>
 			</div>
 		</header>
-		<div class="row">
-			<div class="col-lg-9 collapse show" id="uciTotal">
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show uciTotal">
 				<figure class="figure">
 					<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-log.png" alt="" />
-					<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma.</figcaption>
+					<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Escala logarítmica.</figcaption>
 				</figure>
 			</div>
-			<div class="col-lg-9 collapse" id="uciRelativo">
+			<div class="col-lg-9 graph collapse uciRelativo">
 			<figure class="figure">
-				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-per-cienmil-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Ingresos en la UCI por cada 100.000 habitantes. Escala logarítmica</figcaption>
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Ingresos en la UCI por cada 100.000 habitantes. Escala logarítmica.</figcaption>
 			</figure>
 			</div>
-			<div class="col-lg-9 collapse" id="uciSmallMultiples">
+			<div class="col-lg-9 graph collapse uciSmallMultiples">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-9 graph show uciTotal">
+				<figure class="figure">
+					<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Escala lineal.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-9 graph collapse uciRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Ingresos en la UCI por cada 100.000 habitantes. Escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse uciSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
 			</figure>
 			</div>
 		</div>
@@ -130,34 +184,61 @@
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col">Fallecimientos</h2>
-			<div class="col-12">
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="#fallecidosTotal" aria-expanded="false" aria-controls="fallecidosTotal">Total de fallecimientos</button></li>
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="#fallecidosRelativo" aria-expanded="false" aria-controls="fallecidosRelativo">Fallecimientos/100.000 hab.</button></li>
-					<li class="list-inline-item"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="#fallecidosSmallMultiples" aria-expanded="false" aria-controls="fallecidosSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosTotal" aria-expanded="false" aria-controls="fallecidosTotal">Total de fallecimientos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosRelativo" aria-expanded="false" aria-controls="fallecidosRelativo">Fallecimientos/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosSmallMultiples" aria-expanded="false" aria-controls="fallecidosSmallMultiples">Small Multiples</button></li>
 				</ul>
 			</div>
 		</header>
-		<div class="row">
-			<div class="col-lg-9 collapse show" id="fallecidosTotal">
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show fallecidosTotal">
 				<figure class="figure">
 					<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-superpuesto-log.png" alt="" />
 					<figcaption class="figure-caption text-right">Total de fallecimientos.</figcaption>
 				</figure>
 			</div>
-			<div class="col-lg-9 collapse" id="fallecidosRelativo">
+			<div class="col-lg-9 graph collapse fallecidosRelativo">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala logarítmica</figcaption>
 			</figure>
 			</div>
-			<div class="col-lg-9 collapse" id="fallecidosSmallMultiples">
+			<div class="col-lg-9 graph collapse fallecidosSmallMultiples">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de fallecimientos por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
 			</figure>
 			</div>
-
+		</div>
+		<div class="row lin switch">
+			<div class="col-lg-9 graph show fallecidosTotal">
+				<figure class="figure">
+					<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de fallecimientos. Escala lineal.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-9 graph collapse fallecidosRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse fallecidosSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de fallecimientos por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -181,40 +262,76 @@
 			$(this).addClass('active')
 		})
 
+		// switch between log and lineal graphs
+		$('#casos .btn-switch').on('click',function() {
+			target='#casos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#casos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+		$('#ingresos .btn-switch').on('click',function() {
+			target='#ingresos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#ingresos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#ingresos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+		$('#fallecimientos .btn-switch').on('click',function() {
+			target='#fallecimientos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#fallecimientos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+
 		// fade in and out graphs
 		$('#casos .btn-collapse').on('click',function() {
 
-			target=$(this).attr('data-target')
+			target='#casos .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
 			}
 			else {
-				$('#casos .collapse').collapse('hide')
+				$('#casos .graph').collapse('hide')
 				$(target).collapse('show')
-				$('#casos .active').removeClass('active')
+				$('#casos .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})
-		$('#ingresos .btn-collapse').on('click',function(e) {
+		$('#ingresos .btn-collapse').on('click',function() {
 
-			target=$(this).attr('data-target')
+			target='#ingresos .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
 			}
 			else {
-				$('#ingresos .collapse').collapse('hide')
+				$('#ingresos .graph').collapse('hide')
 				$(target).collapse('show')
-				$('#ingresos .active').removeClass('active')
+				$('#ingresos .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})
-		$('#fallecimientos .btn-collapse').on('click',function(e) {
+		$('#fallecimientos .btn-collapse').on('click',function() {
 
-			target=$(this).attr('data-target')
+			target='#fallecimientos .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
 			}
 			else {
-				$('#fallecimientos .collapse').collapse('hide')
+				$('#fallecimientos .graph').collapse('hide')
 				$(target).collapse('show')
-				$('#fallecimientos .active').removeClass('active')
+				$('#fallecimientos .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

@@ -3,24 +3,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Propagación del coronavirus en Italia</title>
+	<title>Propagación del coronavirus en Francia</title>
 
 	<!-- generic meta -->
 	<meta content="Montera34" name="author" />
-	<meta content="Análisis de la propagación del Coronavirus (COVID-19) por regiones en Italia" name="description" />
+	<meta content="Análisis de la propagación del Coronavirus (COVID-19) por regiones en Francia" name="description" />
 	<meta content="coronavirus, COVID19, COVID_19, COVID-19, visualización de datos, análisis de datos" name="keywords" />
 	<!-- facebook meta -->
-	<meta property="og:title" content="Propagación del coronavirus en Italia" />
+	<meta property="og:title" content="Propagación del coronavirus en Francia" />
 	<meta property="og:type" content="website" />
-	<meta property="og:description" content="Análisis de la propagación del coronavirus (COVID-19) por regiones en Italia" />
+	<meta property="og:description" content="Análisis de la propagación del coronavirus (COVID-19) por regiones en Francia" />
 	<meta property="og:url" content="https://lab.montera34.com/covid19" />
 	<meta property="og:image" content="https://lab.montera34.com/covid19/img/rrss.png" />
 	<meta property="og:locale" content="es_ES" />
 	<!-- twitter meta -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@montera34">
-	<meta name="twitter:title" content="Propagación del coronavirus en Italia" />
-	<meta name="twitter:description" content="Análisis de la propagación del coronavirus (COVID-19) por regiones en Italia" />
+	<meta name="twitter:title" content="Propagación del coronavirus en Francia" />
+	<meta name="twitter:description" content="Análisis de la propagación del coronavirus (COVID-19) por regiones en Francia" />
 	<meta name="twitter:creator" content="@skotperez" />
 	<meta name="twitter:image" content="https://lab.montera34.com/covid19/img/rrss.png">
 	<meta property="twitter:account_id" content="1491442110" />
@@ -32,7 +32,7 @@
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
 <div class="container-xl">
-	<a class="navbar-brand" href="#">Propagación del COVID-19 en Italia</a>
+	<a class="navbar-brand" href="#">Propagación del COVID-19 en Francia</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topbar" aria-controls="topbar" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -48,14 +48,13 @@
 				</div>
 			</li>
 			<li class="nav-item"><a class="nav-link" href="#casos">Casos registrados</a></li>
-			<li class="nav-item"><a class="nav-link" href="#fallecimientos">Fallecimientos</a></li>
 		</ul>
 	</div>
 </nav>
 <div class="container-xl">
 <div class="row">
-	<h1 class="col-12">Propagación del COVID-19 en Italia. Análisis por regiones</h1>
-		<p class="col-lg-4"><strong>Los datos</strong> del COVID-19 en Italia están sacados del repositorio <a href="https://github.com/pcm-dpc/COVID-19">COVID-19 Italia - Monitoraggio situazione </a>. Es el dataset oficial de la Presidenza del Consiglio dei Ministri - <a href="http://www.protezionecivile.it/">Dipartimento della Protezione Civile</a>.</p>
+	<h1 class="col-12">Propagación del COVID-19 en Francia. Análisis por regiones</h1>
+	<p class="col-lg-4"><strong>Los datos</strong> del COVID-19 en Francia están sacados de la página <a href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-et-infections-respiratoires/infection-a-coronavirus/articles/infection-au-nouveau-coronavirus-sars-cov-2-covid-19-france-et-monde">Sante Publique France</a>, dependiente del Ministère des Solidarités et de la santé. Los datos en esa página se publican en tablas HTML y en PDF, formatos poco reutlizables. Aquí usamos el dataset construido por Bastien Guerry utilizando <a href="https://github.com/bzg/covid19-fr">este scraper</a>, y que publica diariamente en <a href="https://www.data.gouv.fr/fr/datasets/cas-confirmes-dinfection-au-covid-19-par-region/">data.gouv.fr</a>. <br>¡Gracias por esta labor <a href="https://bzg.fr">Bastien</a>!</p>
 	<p class="col-lg-4"><strong>Los gráficos</strong> que aparece en esta página están generados usando un <a href="https://code.montera34.com:4443/numeroteca/covid19/">pequeño script de R que puedes consultar y descargar en este repositorio</a>.<br>Más <a href="http://numeroteca.org/2020/03/12/covid19-comunidades-autonomas-espana/">sobre el proceso de producción de estos gráficos</a> en el blog de numeroteca.</p>
 	<p class="col-lg-4"><strong>La escala</strong> que se suele usar para representar propagaciones de virus es la logarítmica ya que una escala lineal permite ver poco de algunos de los casos representados, comunidades autónomas en estos gráficos (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">más sobre escala logarítmica y pandemias</a>). Sin embargo, hay veces que la escala lineal es útil.</p>
 	</div>
@@ -84,13 +83,13 @@
 		<div class="row log switch show">
 			<div class="col-lg-9 graph show casosTotal">
 			<figure class="figure">
-				<img class="figure-img img-fluid" src="../covid19-r/img/italia/covid19_casos-registrados-por-region-superpuesto-log.png" alt="" />
+				<img class="figure-img img-fluid" src="../covid19-r/img/france/covid19_casos-registrados-por-region-superpuesto-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por región. Escala logarítmica</figcaption>
 			</figure>
 			</div>
 			<div class="col-lg-9 graph collapse casosSmallMultiples">
 			<figure class="figure">
-				<img class="figure-img img-fluid" src="../covid19-r/img/italia/covid19_casos-registrados-por-region-log.png" alt="" />
+				<img class="figure-img img-fluid" src="../covid19-r/img/france/covid19_casos-registrados-por-region-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por región. Small multiples usando escala logarítmica.</figcaption>
 			</figure>
 			</div>
@@ -98,50 +97,20 @@
 		<div class="row lin switch collapse">
 			<div class="col-lg-9 graph show casosTotal">
 			<figure class="figure">
-				<img class="figure-img img-fluid" src="../covid19-r/img/italia/covid19_casos-registrados-por-region-superpuesto-lineal.png" alt="" />
+				<img class="figure-img img-fluid" src="../covid19-r/img/france/covid19_casos-registrados-por-region-superpuesto-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por región. Escala lineal</figcaption>
 			</figure>
 			</div>
 			<div class="col-lg-9 graph collapse casosSmallMultiples">
 			<figure class="figure">
-				<img class="figure-img img-fluid" src="../covid19-r/img/italia/covid19_casos-registrados-por-region-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por región. Small multiples usando escala lineal.</figcaption>
+				<img class="figure-img img-fluid" src="../covid19-r/img/france/covid19_casos-registrados-por-region-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
 			</figure>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section id="fallecimientos" class="section">
-	<div class="container-xl">
-		<header class="row">
-			<h2 class="col">Fallecimientos</h2>
-			<div class="col-12 mb-3 scales">
-				Escala: 
-				<div class="btn-group" role="group" aria-label="Selector de escala">
-					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
-					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
-				</div>
-			</div>
-		</header>
-		<div class="row log switch show">
-			<div class="col-lg-9 graph show fallecidosTotal">
-				<figure class="figure">
-					<img class="figure-img img-fluid" src="../covid19-r/img/italia/covid19_fallecimientos-registrados-por-region-superpuesto-log.png" alt="" />
-					<figcaption class="figure-caption text-right">Total de fallecimientos.</figcaption>
-				</figure>
-			</div>
-		</div>
-		<div class="row lin switch collapse">
-			<div class="col-lg-9 graph show fallecidosTotal">
-				<figure class="figure">
-					<img class="figure-img img-fluid" src="../covid19-r/img/italia/covid19_fallecimientos-registrados-por-region-superpuesto-lineal.png" alt="" />
-					<figcaption class="figure-caption text-right">Total de fallecimientos. Escala lineal.</figcaption>
-				</figure>
-			</div>
-		</div>
-	</div>
-</section>
 
 <footer>
 	<div class="container-xl mt-5 pt-2 border-top">
@@ -172,18 +141,6 @@
 				$('#casos .switch').collapse('hide')
 				$(target).collapse('show')
 				$('#casos .scales .active').removeClass('active')
-				$(this).addClass('active')
-			}		
-		})
-		$('#fallecimientos .btn-switch').on('click',function() {
-			target='#fallecimientos .'+$(this).attr('data-target')
-			if ( $(target).hasClass('show') ) {
-				console.log('HAR!')
-			}
-			else {
-				$('#fallecimientos .switch').collapse('hide')
-				$(target).collapse('show')
-				$('#fallecimientos .scales .active').removeClass('active')
 				$(this).addClass('active')
 			}		
 		})

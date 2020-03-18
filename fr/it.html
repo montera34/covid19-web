@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr_FR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Propagation du COVID-19 en Italie</title>
+
+	<!-- generic meta -->
+	<meta content="Montera34" name="author" />
+	<meta content="Analyse de la propagation du Coronavirus (COVID-19) par région en Italie" name="description" />
+	<meta content="coronavirus, COVID19, COVID_19, COVID-19, visualisation des données, analyse des données" name="keywords" />
+	<!-- facebook meta -->
+	<meta property="og:title" content="Propagation du COVID-19 en Italie" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Analyse de la propagation du Coronavirus (COVID-19) par région en Italie" name="description" />
+	<meta property="og:url" content="https://lab.montera34.com/covid19/fr/" />
+	<meta property="og:image" content="https://lab.montera34.com/covid19/img/rrss.png" />
+	<meta property="og:locale" content="fr_FR" />
+	<!-- twitter meta -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@montera34">
+	<meta name="twitter:title" content="Propagation du COVID-19 en Italie" />
+	<meta name="twitter:description" content="Analyse de la propagation du Coronavirus (COVID-19) par région en Italie" />
+	<meta name="twitter:creator" content="@skotperez" />
+	<meta name="twitter:image" content="https://lab.montera34.com/covid19/img/rrss.png">
+	<meta property="twitter:account_id" content="1491442110" />
+
+	<link rel="author" href="https://montera34.com"/>
+</head>
+<body class="bg-light">
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
+<div class="container-xl">
+	<a class="navbar-brand" href="#">Propagation du COVID-19 en Italie</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topbar" aria-controls="topbar" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="topbar">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle bg-danger text-white" href="#" id="navbarDropdownCountry" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">País</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownCountry">
+					<a class="dropdown-item" href="index.html">Espagne</a>
+					<a class="dropdown-item" href="fr.html">France</a>
+					<a class="dropdown-item" href="it.html">Italie</a>
+				</div>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="#casos">Cas enregistrés</a></li>
+			<li class="nav-item"><a class="nav-link" href="#fallecimientos">Décès</a></li>
+		</ul>
+		<ul class="lang navbar-nav">
+			<li class="nav-item"><a title="Espagnol" class="small nav-link text-white bg-dark" href="../it.html">ES</a></li>
+			<li class="nav-item"><span title="Français" class="small nav-link text-dark bg-white">FR</span></li>
+		</ul>
+
+	</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+	<h1 class="col-12">Propagation du COVID-19 en Italie. Analyse par régions</h1>
+	<p class="col-lg-4"><strong>Les données</strong> du COVID-19 en Italie sont extraites du répertoire <a href="https://github.com/pcm-dpc/COVID-19">COVID-19 Italia - Monitoraggio situazione </a>. C'est le dataset officiel de la Presidenza del Consiglio dei Ministri - <a href="http://www.protezionecivile.it/">Dipartimento della Protezione Civile</a>.</p>
+	<p class="col-lg-4"><strong>Les graphiques</strong> de cette page sont générés à l'aide <a href="https://code.montera34.com:4443/numeroteca/covid19/">d'un petit script R</a> que vous pouvez afficher et télécharger dans ce référentiel.<br>En savoir <a href="http://numeroteca.org/2020/03/12/covid19-comunidades-autonomas-espana/">plus sur le processus de production de ces graphiques</a> sur le blog numeroteca.</p>
+	<p class="col-lg-4"><strong>L'échelle</strong> habituellement utilisée pour représenter les propagations virales est l’échelle logarithmique, étant donné que l’échelle linéaire permet de voir peu de certains des cas représentés, communautés autonomes dans ces graphiques (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">plus d’infos sur l'échelle logarithmique et les pandémies</a>). Cependant, il y a des moments où l'échelle linéaire est utile.</p>
+</div>
+</div>
+
+<section id="casos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Nombre de cas enregistrés</h2>
+			<div class="col-12 mb-3 scales">
+				Échelle : 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarithmique</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Linéaire</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosTotal" aria-expanded="false" aria-controls="casosTotal">Total de cas</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiples" aria-expanded="false" aria-controls="casosSmallMultiples">Small Multiples</button></li>
+				</ul>
+			</div>
+		</header>
+
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show casosTotal">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../../covid19-r/img/italia/covid19_casos-registrados-por-region-superpuesto-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de cas par région. Échelle logarithmique.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../../covid19-r/img/italia/covid19_casos-registrados-por-region-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de cas par région. Small multiples. Échelle logarithmique.</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-9 graph show casosTotal">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../../covid19-r/img/italia/covid19_casos-registrados-por-region-superpuesto-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de cas par région. Échelle linéaire.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../../covid19-r/img/italia/covid19_casos-registrados-por-region-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de cas par région. Small multiples. Échelle linéaire.</figcaption>
+			</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="fallecimientos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Décès</h2>
+			<div class="col-12 mb-3 scales">
+				Échelle : 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarithmique</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Linéaire</button>
+				</div>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show fallecidosTotal">
+				<figure class="figure">
+					<img class="figure-img img-fluid" src="../../covid19-r/img/italia/covid19_fallecimientos-registrados-por-region-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de décès. Échelle logarithmique.</figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-9 graph show fallecidosTotal">
+				<figure class="figure">
+					<img class="figure-img img-fluid" src="../../covid19-r/img/italia/covid19_fallecimientos-registrados-por-region-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de décès. Échelle linéaire.</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container-xl mt-5 pt-2 border-top">
+		<div class="row">
+			<p class="col-lg-12"><img src="../img/m34.png" alt="" /> <span class="ml-2 text-secondary">Réalisé par <a class="text-body" href="https://montera34.com">Montera34</a>, disponible sous <a class="text-body" href="https://code.montera34.com:4443/skotperez/covid19-web">license GNU GPL 3</a>. Traduction en français par <a class="text-body" href="http://jusdolive.fr">Cécile Le Galliard</a>.</span></p>
+		</div>
+	</div>
+</footer>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script>
+		// top navbar links status
+		$('#topbar .nav-link').on('click',function() {
+			$('#topbar .nav-link').removeClass('active')
+			$(this).addClass('active')
+		})
+
+		// switch between log and lineal graphs
+		$('#casos .btn-switch').on('click',function() {
+			target='#casos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#casos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+		$('#fallecimientos .btn-switch').on('click',function() {
+			target='#fallecimientos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#fallecimientos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+
+		// fade in and out graphs
+		$('#casos .btn-collapse').on('click',function() {
+
+			target='#casos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#casos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+	</script>
+	<script type="text/javascript" src="../js/stats.js"></script>
+</boby>
+</html>

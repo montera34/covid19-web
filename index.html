@@ -55,9 +55,9 @@
 <div class="container-xl">
 <div class="row">
 	<h1 class="col-12">Propagación del COVID-19 en España. Análisis por comunidades autónomas</h1>
-	<p class="col-lg-4"><strong>Los datos</strong> del COVID-19 en España están sacados del <a href="https://github.com/datadista/datasets/tree/master/COVID%2019">repositorio de Datadista</a>, que los extrae a su vez de las tablas que publica el Ministerio de Sanidad, Consumo y Bienestar Social en incómodos PDF.<br>¡Gracias por esta labor <a href="https://datadista.com/">Datadistas</a>!</p>
-	<p class="col-lg-4"><strong>Los gráficos</strong> que aparece en esta página están generados usando un <a href="https://code.montera34.com:4443/numeroteca/covid19/">pequeño script de R que puedes consultar y descargar en este repositorio</a>.<br>Más <a href="http://numeroteca.org/2020/03/12/covid19-comunidades-autonomas-espana/">sobre el proceso de producción de estos gráficos</a> en el blog de numeroteca.</p>
-	<p class="col-lg-4"><strong>La escala</strong> que se suele usar para representar propagaciones de virus es la logarítmica ya que una escala lineal permite ver poco de algunos de los casos representados, comunidades autónomas en estos gráficos (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">más sobre escala logarítmica y pandemias</a>). Sin embargo, hay veces que la escala lineal es útil.</p>
+	<p class="col-lg-4"><strong>Los datos</strong> del COVID-19 en España están sacados del <a href="https://github.com/datadista/datasets/tree/master/COVID%2019">repositorio de Datadista</a>, que los extrae a su vez de las tablas que publica el Ministerio de Sanidad, Consumo y Bienestar Social en incómodos PDF.<br>¡Gracias por esta labor <a href="https://datadista.com/">Datadistas</a>!<br>Estamos empezando a recopilar datos por provincia, <a href="https://actua.frenalacurva.net/t/recopilamos-datos-oficiales-de-covid19-por-provincia-en-espana-nos-echas-una-mano/1747">apúntate si quieres echar una mano</a>.</p>
+	<p class="col-lg-4"><strong>Los gráficos</strong> que aparece en esta página están generados usando un <a href="https://code.montera34.com:4443/numeroteca/covid19/">script de R que puedes consultar y descargar en este repositorio</a>. Además publicamos los datos en un único archivo.<br>Más <a href="http://numeroteca.org/2020/03/12/covid19-comunidades-autonomas-espana/">sobre el proceso de producción de estos gráficos</a> en el blog de numeroteca.</p>
+	<p class="col-lg-4"><strong>La escala</strong> que se suele usar para representar propagaciones de virus es la logarítmica ya que permite evaluar si el nivel de crecimiento se sostiene en el tiempo de forma sencilla. Además, la escala lineal no deja ver algunos de los casos representados, comunidades autónomas en estos gráficos (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">más sobre escala logarítmica y pandemias</a>). Sin embargo, hay veces que la escala lineal es útil. Puedes elegir cual ver.</p>
 	</div>
 </div>
 </div>
@@ -66,6 +66,7 @@
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col-12">Número de casos registrados</h2>
+			<p class="col-6 mb-3">Nota: Son datos de casos registrados, no tienen en cuenta los protocolos para obtención de datos (pruebas) de cada comunidad autónoma ni todos los casos “reales” que hay pero no han sido detectados.</p>
 			<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
@@ -252,7 +253,7 @@
 <footer>
 	<div class="container-xl mt-5 pt-2 border-top">
 		<div class="row">
-			<p class="col-lg-6"><img src="img/m34.png" alt="" /> <span class="ml-2 text-secondary">Realizado por <a class="text-body" href="https://montera34.com">Montera34</a>, disponible bajo <a class="text-body" href="https://code.montera34.com:4443/skotperez/covid19-web">licencia GNU GPL 3</a>.</span></p>
+			<p class="col-lg-8"><img src="img/m34.png" alt="" /> <span class="ml-2 text-secondary">Realizado por <a class="text-body" href="https://montera34.com">Montera34</a>, disponible bajo <a class="text-body" href="https://code.montera34.com:4443/skotperez/covid19-web">licencia GNU GPL 3</a>. | <a class="text-body" href="https://montera34.com/contacto/">Contacto</a> | <a class="text-body" href="https://twitter.com/montera34">@montera34</a>.</span></p>
 		</div>
 	</div>
 </footer>

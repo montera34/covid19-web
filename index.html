@@ -113,7 +113,7 @@
 			<div class="col-lg-9 graph collapse casosSmallMultiplesRelativo">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma por 100.000 habitantes. Small multiples usando escala logarítmica.</figcaption>
 			</figure>
 			</div>
 		</div>
@@ -139,7 +139,7 @@
 			<div class="col-lg-9 graph collapse casosSmallMultiplesRelativo">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma por 100.000 habitantes. Small multiples usando escala lineal.</figcaption>
 			</figure>
 			</div>
 		</div>
@@ -162,6 +162,7 @@
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="uciTotal" aria-expanded="false" aria-controls="uciTotal">Total de ingresos</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciRelativo" aria-expanded="false" aria-controls="uciRelativo">Ingresos/100.000 hab.</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciSmallMultiples" aria-expanded="false" aria-controls="uciSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciSmallMultiplesRelativo" aria-expanded="false" aria-controls="uciSmallMultiplesRelativo">Small Multiples/100.000 hab.</button></li>
 				</ul>
 			</div>
 		</header>
@@ -184,6 +185,12 @@
 				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
 			</figure>
 			</div>
+			<div class="col-lg-9 graph collapse uciSmallMultiplesRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-per-cieinmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma por 100.000 habitantes. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
 		</div>
 		<div class="row lin switch collapse">
 			<div class="col-lg-9 graph show uciTotal">
@@ -202,6 +209,12 @@
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse uciSmallMultiplesRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-UCI-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma por 100.000 habitantes. Small multiples usando escala lineal.</figcaption>
 			</figure>
 			</div>
 		</div>
@@ -224,6 +237,7 @@
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosTotal" aria-expanded="false" aria-controls="fallecidosTotal">Total de fallecimientos</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosRelativo" aria-expanded="false" aria-controls="fallecidosRelativo">Fallecimientos/100.000 hab.</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosSmallMultiples" aria-expanded="false" aria-controls="fallecidosSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosSmallMultiplesRelativo" aria-expanded="false" aria-controls="fallecidosSmallMultiplesRelativo">Small Multiples/100.000 hab.</button></li>
 				</ul>
 			</div>
 		</header>
@@ -246,6 +260,12 @@
 				<figcaption class="figure-caption text-right">Total de fallecimientos por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
 			</figure>
 			</div>
+			<div class="col-lg-9 graph collapse fallecidosSmallMultiplesRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de fallecimientos por comunidad autónoma por cada 100.000 habitantes. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
 		</div>
 		<div class="row lin switch collapse">
 			<div class="col-lg-9 graph show fallecidosTotal">
@@ -264,6 +284,12 @@
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de fallecimientos por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse fallecidosSmallMultiplesRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_fallecimientos-registrados-por-comunidad-autonoma-por-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de fallecimientos por comunidad autónoma por cada 100.000 habitantes. Small multiples usando escala lineal.</figcaption>
 			</figure>
 			</div>
 		</div>

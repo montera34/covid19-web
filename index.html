@@ -86,6 +86,7 @@
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosTotal" aria-expanded="false" aria-controls="casosTotal">Total de casos</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosRelativo" aria-expanded="false" aria-controls="casosRelativo">Casos/100.000 hab.</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiples" aria-expanded="false" aria-controls="casosSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiplesRelativo" aria-expanded="false" aria-controls="casosSmallMultiplesRelativo">Small Multiples/100.000 hab.</button></li>
 				</ul>
 			</div>
 		</header>
@@ -109,6 +110,12 @@
 				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
 			</figure>
 			</div>
+			<div class="col-lg-9 graph collapse casosSmallMultiplesRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
 		</div>
 		<div class="row lin switch collapse">
 			<div class="col-lg-9 graph show casosTotal">
@@ -124,6 +131,12 @@
 			</figure>
 			</div>
 			<div class="col-lg-9 graph collapse casosSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosSmallMultiplesRelativo">
 			<figure class="figure">
 				<img class="figure-img img-fluid" src="../covid19-r/img/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala lineal.</figcaption>

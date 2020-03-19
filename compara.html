@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es_ES">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Propagación del coronavirus: comparación entre países</title>
+
+	<!-- generic meta -->
+	<meta content="Montera34" name="author" />
+	<meta content="Análisis de la propagación del Coronavirus (COVID-19). Comparación entre países" name="description" />
+	<meta content="coronavirus, COVID19, COVID_19, COVID-19, visualización de datos, análisis de datos" name="keywords" />
+	<!-- facebook meta -->
+	<meta property="og:title" content="Propagación del coronavirus: comparación entre países" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Análisis de la propagación del Coronavirus (COVID-19). Comparación entre países" />
+	<meta property="og:url" content="https://lab.montera34.com/covid19" />
+	<meta property="og:image" content="https://lab.montera34.com/covid19/img/rrss.png" />
+	<meta property="og:locale" content="es_ES" />
+	<!-- twitter meta -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@montera34">
+	<meta name="twitter:title" content="Propagación del coronavirus: comparación entre países" />
+	<meta name="twitter:description" content="Análisis de la propagación del Coronavirus (COVID-19). Comparación entre países" />
+	<meta name="twitter:creator" content="@skotperez" />
+	<meta name="twitter:image" content="https://lab.montera34.com/covid19/img/rrss.png">
+	<meta property="twitter:account_id" content="1491442110" />
+	
+	<link rel="author" href="https://montera34.com"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-light">
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
+<div class="container-xl">
+	<a class="navbar-brand" href="#">Propagación del COVID-19. Comparación entre países</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topbar" aria-controls="topbar" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="topbar">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle bg-danger text-white" href="#" id="navbarDropdownCountry" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">País</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownCountry">
+					<a class="dropdown-item" href="index.html">España</a>
+					<a class="dropdown-item" href="fr.html">Francia</a>
+					<a class="dropdown-item" href="it.html">Italia</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="compara.html">Comparación entre países</a>
+				</div>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="#casos">Casos registrados</a></li>
+			<li class="nav-item"><a class="nav-link" href="#fallecimientos">Fallecimientos</a></li>
+		</ul>
+		<ul class="lang navbar-nav">
+			<li class="nav-item"><span title="Español" class="small nav-link text-dark bg-white">ES</span></li>
+			<li class="nav-item"><a title="Francés" class="small nav-link text-white bg-dark" href="fr/">FR</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+	<h1 class="col-12">Propagación del COVID-19. Análisis comparativo entre países</h1>
+	<p class="col-lg-4"><strong>Los datos</strong> del COVID-19 en España están sacados del <a href="https://github.com/datadista/datasets/tree/master/COVID%2019">repositorio de Datadista</a>, que los extrae a su vez de las tablas que publica el Ministerio de Sanidad, Consumo y Bienestar Social. Los datos en Italia están sacados del repositorio <a href="https://github.com/pcm-dpc/COVID-19">COVID-19 Italia - Monitoraggio situazione </a>. Los datos de Francia están sacados de la página <a href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-et-infections-respiratoires/infection-a-coronavirus/articles/infection-au-nouveau-coronavirus-sars-cov-2-covid-19-france-et-monde">Sante Publique France</a> del Ministère des Solidarités et de la santé.</p>
+	<p class="col-lg-4"><strong>Los gráficos</strong> que aparece en esta página están generados usando un <a href="https://code.montera34.com:4443/numeroteca/covid19/">script de R que puedes consultar y descargar en este repositorio</a>. Los gráficos interactivos están generados usando Plotly.</p>
+	<p class="col-lg-4"><strong>La escala</strong> que se suele usar para representar propagaciones de virus es la logarítmica ya que permite evaluar si el nivel de crecimiento se sostiene en el tiempo de forma sencilla. Además, la escala lineal no deja ver algunos de los casos representados, comunidades autónomas en estos gráficos (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">más sobre escala logarítmica y pandemias</a>). Sin embargo, hay veces que la escala lineal es útil. Puedes elegir cual ver.</p>
+	</div>
+</div>
+</div>
+
+<section id="casos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Número de casos registrados por región</h2>
+		</header>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="embed-responsive embed-responsive-4by3">
+					<iframe class="embed-responsive-item" src="../covid19-r/interactive/spain-italy-france_cases_regions-evolution.html"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="fallecimientos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Fallecimientos por región por cada 100.000 habitantes</h2>
+		</header>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="embed-responsive embed-responsive-4by3">
+					<iframe class="embed-responsive-item" src="../covid19-r/interactive/spain-italy-france-deceassed_regions-evolution_log.html"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container-xl mt-5 pt-2 border-top">
+		<div class="row">
+			<p class="col-lg-12"><img src="img/m34.png" alt="" /> <span class="ml-2 text-secondary">Realizado por <a class="text-body" href="https://montera34.com">Montera34</a>, disponible bajo <a class="text-body" href="https://code.montera34.com:4443/skotperez/covid19-web">licencia GNU GPL 3</a> | <a class="text-body" href="https://montera34.com/contacto/">Contacto</a> | <a class="text-body" href="https://twitter.com/montera34">@montera34</a>.</span></p>
+		</div>
+	</div>
+</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/stats.js"></script>
+</boby>
+</html>

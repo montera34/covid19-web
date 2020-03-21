@@ -69,30 +69,37 @@
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col-12">Número de casos registrados por región</h2>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosInteractivo" aria-expanded="false" aria-controls="casosInteractivo">Interactivo</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosTotal" aria-expanded="false" aria-controls="casosTotal">Total de casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosRelativo" aria-expanded="false" aria-controls="casosRelativo">Casos/100.000 hab.</button></li>
+				</ul>
+			</div>
+
 		</header>
+
 		<div class="row">
-			<div class="col-lg-12 d-none d-sm-block">
-				<div class="embed-responsive embed-responsive-4by3">
-					<iframe class="embed-responsive-item" src="../covid19-r/interactive/spain-italy-france_cases_regions-evolution.html"></iframe>
+			<div class="col-lg-12 graph show casosInteractivo">
+				<div class="d-none d-sm-block">
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item" src="../covid19-r/interactive/spain-italy-france_cases_regions-evolution.html"></iframe>
+					</div>
+				</div>
+				<div class="d-block d-sm-none">
+					<figure class="figure">
+						<a href="../covid19-r/interactive/spain-italy-france_cases_regions-evolution.html"><img class="figure-img img-fluid" src="../covid19-r/interactive/spain-italy-france_cases_regions-evolution.png" alt="" /></a>
+						<figcaption class="figure-caption text-right">Para ver el gráfico interactivo pincha en la imagen.</figcaption>
+					</figure>
 				</div>
 			</div>
-			<div class="col-lg-9 d-block d-sm-none">
-				<figure class="figure">
-					<a href="../covid19-r/interactive/spain-italy-france_cases_regions-evolution.html"><img class="figure-img img-fluid" src="../covid19-r/interactive/spain-italy-france_cases_regions-evolution.png" alt="" /></a>
-					<figcaption class="figure-caption text-right">Para ver el gráfico interactivo pincha en la imagen.</figcaption>
-				</figure>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-9 d-block">
+			<div class="col-lg-12 graph collapse casosTotal">
 				<figure class="figure">
 					<a href="../covid19-r/img/compare/covid19_casos-registrados-superpuesto-countries-regions-log.png"><img class="figure-img img-fluid" src="../covid19-r/img/compare/covid19_casos-registrados-superpuesto-countries-regions-log.png" alt="" /></a>
 					<figcaption class="figure-caption text-right">Número de casos registrados por región.</figcaption>
 				</figure>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-9 d-block">
+			<div class="col-lg-12 graph collapse casosRelativo">
 				<figure class="figure">
 					<a href="../covid19-r/img/compare/covid19_casos-registrados-superpuesto-countries-regions-per-cienmil-log.png"><img class="figure-img img-fluid" src="../covid19-r/img/compare/covid19_casos-registrados-superpuesto-countries-regions-per-cienmil-log.png" alt="" /></a>
 					<figcaption class="figure-caption text-right">Número de casos registrados por región por cada 100.000 habitantes.</figcaption>
@@ -106,30 +113,35 @@
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col-12">Fallecimientos por región por cada 100.000 habitantes</h2>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecimientosInteractivo" aria-expanded="false" aria-controls="fallecimientosInteractivo">Interactivo</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecimientosTotal" aria-expanded="false" aria-controls="fallecimientosTotal">Total de fallecimientos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecimientosRelativo" aria-expanded="false" aria-controls="fallecimientosRelativo">Fallecimientos/100.000 hab.</button></li>
+				</ul>
+			</div>
 		</header>
 		<div class="row">
-			<div class="col-lg-12 d-none d-sm-block">
-				<div class="embed-responsive embed-responsive-4by3">
-					<iframe class="embed-responsive-item" src="../covid19-r/interactive/spain-italy-france-deceassed_regions-evolution_log.html"></iframe>
+			<div class="col-lg-12 graph show fallecimientosInteractivo">
+				<div class="d-none d-sm-block">
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item" src="../covid19-r/interactive/spain-italy-france-deceassed_regions-evolution_log.html"></iframe>
+					</div>
+				</div>
+				<div class="d-block d-sm-none">
+					<figure class="figure">
+						<a href="../covid19-r/interactive/spain-italy-france-deceassed_regions-evolution_log.html"><img class="figure-img img-fluid" src="../covid19-r/interactive/spain-italy-france-deceassed_regions-evolution_log.png" alt="" /></a>
+						<figcaption class="figure-caption text-right">Para ver el gráfico interactivo pincha en la imagen.</figcaption>
+					</figure>
 				</div>
 			</div>
-			<div class="col-lg-9 d-block d-sm-none">
-				<figure class="figure">
-					<a href="../covid19-r/interactive/spain-italy-france-deceassed_regions-evolution_log.html"><img class="figure-img img-fluid" src="../covid19-r/interactive/spain-italy-france-deceassed_regions-evolution_log.png" alt="" /></a>
-					<figcaption class="figure-caption text-right">Para ver el gráfico interactivo pincha en la imagen.</figcaption>
-				</figure>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-9 d-block">
+			<div class="col-lg-12 graph collapse fallecimientosTotal">
 				<figure class="figure">
 					<a href="../covid19-r/img/covid19_fallecimientos-superpuesto-countries-regions-log.png"><img class="figure-img img-fluid" src="../covid19-r/img/compare/covid19_fallecimientos-superpuesto-countries-regions-log.png" alt="" /></a>
 					<figcaption class="figure-caption text-right">Fallecimientos por región.</figcaption>
 				</figure>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-9 d-block">
+			<div class="col-lg-12 graph collapse fallecimientosRelativo">
 				<figure class="figure">
 					<a href="../covid19-r/img/compare/covid19_fallecimientos-superpuesto-countries-regions-per-cienmil-log.png"><img class="figure-img img-fluid" src="../covid19-r/img/compare/covid19_fallecimientos-superpuesto-countries-regions-per-cienmil-log.png" alt="" /></a>
 					<figcaption class="figure-caption text-right">Fallecimientos por región por cada 100.000 habitantes.</figcaption>
@@ -150,5 +162,32 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/stats.js"></script>
+	<script>
+		// fade in and out graphs
+		$('#casos .btn-collapse').on('click',function() {
+
+			target='#casos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#casos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#fallecimientos .btn-collapse').on('click',function() {
+
+			target='#fallecimientos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#fallecimientos .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+	</script>
 </boby>
 </html>

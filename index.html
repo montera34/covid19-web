@@ -52,7 +52,7 @@
 </nav>
 <div class="container-xl">
 <div class="row">
-	<h1 class="col-12">Propagación del COVID-19 en España. Análisis por comunidades autónomas</h1>
+	<h1 class="col-12">Propagación del COVID-19 en España. Análisis por comunidades autónomas y provincias</h1>
 	<p class="col-lg-4"><strong>Los datos</strong> del COVID-19 en España están sacados del <a href="https://github.com/datadista/datasets/tree/master/COVID%2019">repositorio de Datadista</a>, que los extrae a su vez de las tablas que publica el Ministerio de Sanidad, Consumo y Bienestar Social en incómodos PDF.<br>¡Gracias por esta labor <a href="https://datadista.com/">Datadistas</a>!<br>Estamos empezando a recopilar datos por provincia, <a href="https://actua.frenalacurva.net/t/recopilamos-datos-oficiales-de-covid19-por-provincia-en-espana-nos-echas-una-mano/1747">apúntate si quieres echar una mano</a>.</p>
 	<p class="col-lg-4"><strong>Los gráficos</strong> que aparece en esta página están generados usando un <a href="https://code.montera34.com:4443/numeroteca/covid19/">script de R que puedes consultar y descargar en este repositorio</a>. Además publicamos los datos en un único archivo.<br>Más <a href="http://numeroteca.org/2020/03/12/covid19-comunidades-autonomas-espana/">sobre el proceso de producción de estos gráficos</a> en el blog de numeroteca.</p>
 	<p class="col-lg-4"><strong>La escala</strong> que se suele usar para representar propagaciones de virus es la logarítmica ya que permite evaluar si el nivel de crecimiento se sostiene en el tiempo de forma sencilla. Además, la escala lineal no deja ver algunos de los casos representados, comunidades autónomas en estos gráficos (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">más sobre escala logarítmica y pandemias</a>). Sin embargo, hay veces que la escala lineal es útil. Puedes elegir cual ver.</p>
@@ -62,7 +62,7 @@
 <section id="casos" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col-12">Número de casos registrados</h2>
+			<h2 class="col-12">Número de casos registrados por comunidad autónoma <small><a href="#casos" title="Enlace directo a esta sección">#</a></small></h2>
 			<p class="col-6 mb-3 small">Nota: Son datos de casos registrados, no tienen en cuenta los protocolos para obtención de datos (pruebas) de cada comunidad autónoma ni todos los casos “reales” que hay pero no han sido detectados.</p>
 			<div class="col-12 mb-3 scales">
 				Escala: 
@@ -139,7 +139,7 @@
 <section id="ingresos" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col">Ingresos en la UCI</h2>
+			<h2 class="col">Ingresos en la UCI por comunidad autónoma <small><a href="#ingresos" title="Enlace directo a esta sección">#</a></small></h2>
 			<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
@@ -214,7 +214,7 @@
 <section id="fallecimientos" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col">Fallecimientos</h2>
+			<h2 class="col">Fallecimientos por comunidad autónoma <small><a href="#fallecimientos" title="Enlace directo a esta sección">#</a></small></h2>
 			<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
@@ -286,6 +286,120 @@
 	</div>
 </section>
 
+<section id="casos-provincia" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Número de casos registrados por provincia <small><a href="#casos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
+			<p class="col-6 mb-3 small">Nota: Son datos de casos registrados, no tienen en cuenta los protocolos para obtención de datos (pruebas) de cada comunidad autónoma ni todos los casos “reales” que hay pero no han sido detectados.</p>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosProvinciaTotal" aria-expanded="false" aria-controls="casosProvinciaTotal">Total de casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaRelativo" aria-expanded="false" aria-controls="casosProvinciaRelativo">Casos/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiples" aria-expanded="false" aria-controls="casosProvinciaSmallMultiples">Small Multiples</button></li>
+				</ul>
+			</div>
+		</header>
+
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show casosProvinciaTotal">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosProvinciaRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosProvinciaSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-9 graph show casosProvinciaTotal">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosProvinciaRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-9 graph collapse casosProvinciaSmallMultiples">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="fallecimientos-provincia" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Fallecimientos por provincia <small><a href="#fallecimientos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosProvinciaTotal" aria-expanded="false" aria-controls="fallecidosProvinciaTotal">Total de fallecimientos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosProvinciaRelativo" aria-expanded="false" aria-controls="fallecidosProvinciaRelativo">Fallecimientos/100.000 hab.</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show fallecidosProvinciaTotal">
+				<figure class="figure">
+					<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de fallecimientos.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-9 graph collapse fallecidosProvinciaRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-9 graph show fallecidosProvinciaTotal">
+				<figure class="figure">
+					<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de fallecimientos. Escala lineal.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-9 graph collapse fallecidosProvinciaRelativo">
+			<figure class="figure">
+				<img class="figure-img img-fluid" src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala lineal.</figcaption>
+			</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+
 <footer>
 	<div class="container-xl mt-5 pt-2 border-top">
 		<div class="row">
@@ -341,6 +455,29 @@
 				$(this).addClass('active')
 			}		
 		})
+		$('#casos-provincia .btn-switch').on('click',function() {
+			target='#casos-provincia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos-provincia .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#casos-provincia .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+		$('#fallecimientos-provincia .btn-switch').on('click',function() {
+			target='#fallecimientos-provincia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#fallecimientos-provincia .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientos-provincia .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
 
 		// fade in and out graphs
 		$('#casos .btn-collapse').on('click',function() {
@@ -376,6 +513,30 @@
 				$('#fallecimientos .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#fallecimientos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#casos-provincia .btn-collapse').on('click',function() {
+
+			target='#casos-provincia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos-provincia .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#casos-provincia .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#fallecimientos-provincia .btn-collapse').on('click',function() {
+
+			target='#fallecimientos-provincia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#fallecimientos-provincia .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientos-provincia .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

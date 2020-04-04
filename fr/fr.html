@@ -62,7 +62,7 @@
 <section id="casos" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col-12">Nombre de cas enregistrés</h2>
+			<h2 class="col-12">Nombre de cas enregistrés <small><a href="#casos" title="Lien direct vers cette section">#</a></small></h2>
 			<div class="col-12 mb-3 scales">
 				Échelle : 
 				<div class="btn-group" role="group" aria-label="Sélecteur d'échelle">
@@ -123,6 +123,54 @@
 </section>
 
 
+<section id="fallecimientos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Décès par région <small><a href="#fallecimientos" title="Lien direct vers cette section">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Échelle : 
+				<div class="btn-group" role="group" aria-label="Selecteur d'échelle">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarithmique</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Linéaire</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosTotal" aria-expanded="false" aria-controls="fallecidosTotal">Total de déces</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosSmallMultiples" aria-expanded="false" aria-controls="fallecidosSmallMultiples">Small Multiples</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-9 graph show fallecidosTotal">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="../img/tmp.jpg" data-src="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-superpuesto-log.png" data-srcset="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de décès.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-9 graph collapse fallecidosSmallMultiples">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="../img/tmp.jpg" data-src="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-log.png" data-srcset="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de décès par région. Small multiples. Échelle logarithmique.</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-9 graph show fallecidosTotal">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="../img/tmp.jpg" data-src="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-superpuesto-lineal.png" data-srcset="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de décès. Échelle logarithmique.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-9 graph collapse fallecidosSmallMultiples">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="../img/tmp.jpg" data-src="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-lineal.png" data-srcset="../../covid19-r/img/france/covid19_fallecimientos-registrados-por-region-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de décès par région. Small multiples. Échelle linéaire.</figcaption>
+			</figure>
+			</div>
+		</div>
+	</div>
+</section>
 <footer>
 	<div class="container-xl mt-5 pt-2 border-top">
 		<div class="row">
@@ -135,6 +183,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../style.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="../js/lazy.images.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script>
 		// top navbar links status
@@ -155,6 +204,17 @@
 				$(this).addClass('active')
 			}		
 		})
+		$('#fallecimientos .btn-switch').on('click',function() {
+			target='#fallecimientos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#fallecimientos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
 
 		// fade in and out graphs
 		$('#casos .btn-collapse').on('click',function() {
@@ -166,6 +226,18 @@
 				$('#casos .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#casos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#fallecimientos .btn-collapse').on('click',function() {
+
+			target='#fallecimientos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#fallecimientos .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientos .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

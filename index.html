@@ -228,7 +228,7 @@
 <section id="fallecimientos" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col">Fallecimientos por comunidad autónoma <small><a href="#fallecimientos" title="Enlace directo a esta sección">#</a></small></h2>
+			<h2 class="col">Fallecimientos acumulados por comunidad autónoma <small><a href="#fallecimientos" title="Enlace directo a esta sección">#</a></small></h2>
 			<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
@@ -300,6 +300,55 @@
 	</div>
 </section>
 
+<!-- Fallecidos por día -->
+<section id="fallecimientosdia" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Fallecimientos por día por comunidad autónoma <small><a href="#fallecimientosdia" title="Enlace directo a esta sección">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaMedia" aria-expanded="false" aria-controls="fallecidosRelativo">Media de fallecimientos por día.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosDiaAbsoluto" aria-expanded="false" aria-controls="fallecidosTotal">Fallecimientos por día</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-11 graph show fallecidosDiaMedia">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-log_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-log_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de muertes por día en los 6 días anteriores por comunidad autónoma.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph show fallecidosDiaAbsoluto">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Muertes por día por comunidad autónoma.</figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-11 graph show fallecidosDiaMedia">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-lineal_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-lineal_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de muertes por día en los 6 días anteriores por comunidad autónoma.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph show fallecidosDiaAbsoluto">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Muertes por día por comunidad autónoma.</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id="casos-provincia" class="section">
 	<div class="container-xl">
 		<header class="row">
@@ -320,7 +369,6 @@
 				</ul>
 			</div>
 		</header>
-
 		<div class="row log switch show">
 			<div class="col-lg-9 graph show casosProvinciaTotal">
 			<figure class="figure">

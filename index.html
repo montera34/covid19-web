@@ -532,6 +532,18 @@
 				$(this).addClass('active')
 			}		
 		})
+    $('#fallecimientosDia .btn-switch').on('click',function() {
+			target='#fallecimientosDia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#fallecimientosDia .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientosDia .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
 		$('#casos-provincia .btn-switch').on('click',function() {
 			target='#casos-provincia .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
@@ -590,6 +602,18 @@
 				$('#fallecimientos .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#fallecimientos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#fallecimientosDia .btn-collapse').on('click',function() {
+
+			target='#fallecimientosDia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#fallecimientosDia .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientosDia .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

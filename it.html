@@ -158,12 +158,12 @@
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col">Fallecimientos por día</h2>
-			<div class="col-12 mb-3 scales">
+			<!--<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
 					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
 				</div>
-			</div>
+			</div>-->
 			<div class="col-12 graphs">
 				<ul class="list-inline">
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecimientosDiaMedia" aria-expanded="false" aria-controls="fallecimientosDiaMedia">Muertes por día (media)</button></li>
@@ -256,6 +256,18 @@
 				$('#casos .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#casos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#fallecimientosDia .btn-collapse').on('click',function() {
+
+			target='#fallecimientosDia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#fallecimientosDia .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientosDia .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

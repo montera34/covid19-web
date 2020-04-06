@@ -443,6 +443,70 @@
 </section>
 
 <!-- provincias -->
+<!-- Fallecidos por día -->
+<section id="fallecimientosDiaProvincias" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Fallecimientos por día por provincia <small><a href="#fallecimientosDiaProvincias" title="Enlace directo a esta sección">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosDiaMediaProv" aria-expanded="false" aria-controls="fallecidosDiaMediaProv">Media de fallecimientos por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaAbsolutoProv" aria-expanded="false" aria-controls="fallecidosDiaAbsolutoProv">Fallecimientos por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaSmallMultipleProv" aria-expanded="false" aria-controls="fallecidosDiaSmallMultipleProv">Small multiples</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-11 graph show fallecidosDiaMediaProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de muertes por día en los 6 días anteriores por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosDiaAbsolutoProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Muertes por día por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosDiaSmallMultipleProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Muertes por día por provincia.</figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-11 graph show fallecidosDiaMediaProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de muertes por día en los 6 días anteriores por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosDiaAbsolutoProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Muertes por día por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosDiaSmallMultipleProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Muertes por día por provincia.</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+
 <section id="casos-provincia" class="section">
 	<div class="container-xl">
 		<header class="row">
@@ -663,6 +727,18 @@
 				$(this).addClass('active')
 			}		
 		})
+   $('#fallecimientosDiaProvincias .btn-switch').on('click',function() {
+			target='#fallecimientosDiaProvincias .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#fallecimientosDiaProvincias .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientosDiaProvincias .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
 		$('#casos-provincia .btn-switch').on('click',function() {
 			target='#casos-provincia .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
@@ -745,6 +821,18 @@
 				$('#altas .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#altas .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#fallecimientosDiaProvincias .btn-collapse').on('click',function() {
+
+			target='#fallecimientosDiaProvincias .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#fallecimientosDiaProvincias .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientosDiaProvincias .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

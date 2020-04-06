@@ -174,7 +174,7 @@
 		<div class="row log switch show">
 			<div class="col-lg-9 graph show fallecidosDiaMedia">
 				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/italia/covid19_muertes-por-dia-region-superpuesto-log_media.png" data-srcset="../covid19-r/img/italia/covid19_muertes-por-dia-region-superpuesto-loglog_media.png" alt="" />
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/italia/covid19_muertes-por-dia-region-superpuesto-log_media.png" data-srcset="../covid19-r/img/italia/covid19_muertes-por-dia-region-superpuesto-log_media.png" alt="" />
 					<figcaption class="figure-caption text-right">Muertes por día por día medias.</figcaption>
 				</figure>
 			</div>
@@ -230,6 +230,18 @@
 				$('#fallecimientos .switch').collapse('hide')
 				$(target).collapse('show')
 				$('#fallecimientos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+		$('#fallecimientosDia .btn-switch').on('click',function() {
+			target='#fallecimientosDia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#fallecimientosDia .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#fallecimientosDia .scales .active').removeClass('active')
 				$(this).addClass('active')
 			}		
 		})

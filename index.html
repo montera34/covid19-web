@@ -73,159 +73,7 @@
 </div>
 </div>
 
-<section id="casos" class="section">
-	<div class="container-xl">
-		<header class="row">
-			<h2 class="col-12">Número de casos registrados por comunidad autónoma <small><a href="#casos" title="Enlace directo a esta sección">#</a></small></h2>
-			<p class="col-6 mb-3 small">Nota: Son datos de casos registrados, no tienen en cuenta los protocolos para obtención de datos (pruebas) de cada comunidad autónoma ni todos los casos “reales” que hay pero no han sido detectados.</p>
-			<div class="col-12 mb-3 scales">
-				Escala: 
-				<div class="btn-group" role="group" aria-label="Selector de escala">
-					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
-					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
-				</div>
-			</div>
-			<div class="col-12 graphs">
-				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosTotal" aria-expanded="false" aria-controls="casosTotal">Total de casos</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosRelativo" aria-expanded="false" aria-controls="casosRelativo">Casos/100.000 hab.</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiples" aria-expanded="false" aria-controls="casosSmallMultiples">Small Multiples</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiplesRelativo" aria-expanded="false" aria-controls="casosSmallMultiplesRelativo">Small Multiples/100.000 hab.</button></li>
-				</ul>
-			</div>
-		</header>
-
-		<div class="row log switch show">
-			<div class="col-lg-11 graph show casosTotal">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Escala logarítmica</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse casosRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala logarítmica</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse casosSmallMultiples">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse casosSmallMultiplesRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma por 100.000 habitantes. Small multiples usando escala logarítmica.</figcaption>
-			</figure>
-			</div>
-		</div>
-		<div class="row lin switch collapse">
-			<div class="col-lg-11 graph show casosTotal">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Escala lineal</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse casosRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala lineal</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse casosSmallMultiples">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse casosSmallMultiplesRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma por 100.000 habitantes. Small multiples usando escala lineal.</figcaption>
-			</figure>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="ingresos" class="section">
-	<div class="container-xl">
-		<header class="row">
-			<h2 class="col">Ingresos en la UCI por comunidad autónoma <small><a href="#ingresos" title="Enlace directo a esta sección">#</a></small></h2>
-			<p></p>
-			<div class="alert alert-warning" role="alert">A partir del 02.04.2020 los datos UCI de Castilla La Mancha, Castilla y León, Comunidad Valenciana, Galicia y Madrid son datos de prevalencia. Es decir, personas ingresadas en UCI a día de hoy.</div>
-			<div class="col-12 mb-3 scales">
-				Escala: 
-				<div class="btn-group" role="group" aria-label="Selector de escala">
-					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
-					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
-				</div>
-			</div>
-			<div class="col-12 graphs">
-				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="uciTotal" aria-expanded="false" aria-controls="uciTotal">Total de ingresos</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciRelativo" aria-expanded="false" aria-controls="uciRelativo">Ingresos/100.000 hab.</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciSmallMultiples" aria-expanded="false" aria-controls="uciSmallMultiples">Small Multiples</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="uciSmallMultiplesRelativo" aria-expanded="false" aria-controls="uciSmallMultiplesRelativo">Small Multiples/100.000 hab.</button></li>
-				</ul>
-			</div>
-		</header>
-		<div class="row log switch show">
-			<div class="col-lg-11 graph show uciTotal">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-log.png" alt="" />
-					<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Escala logarítmica.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-11 graph collapse uciRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Ingresos en la UCI por cada 100.000 habitantes. Escala logarítmica.</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse uciSmallMultiples">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse uciSmallMultiplesRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-per-cienmil-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma por 100.000 habitantes. Small multiples usando escala logarítmica.</figcaption>
-			</figure>
-			</div>
-		</div>
-		<div class="row lin switch collapse">
-			<div class="col-lg-11 graph show uciTotal">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-lineal.png" alt="" />
-					<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Escala lineal.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-11 graph collapse uciRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Ingresos en la UCI por cada 100.000 habitantes. Escala lineal.</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse uciSmallMultiples">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-11 graph collapse uciSmallMultiplesRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-UCI-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de ingresos en la UCI por comunidad autónoma por 100.000 habitantes. Small multiples usando escala lineal.</figcaption>
-			</figure>
-			</div>
-		</div>
-	</div>
-</section>
+<h2 id="ccaa">Por comunidades autónomas</h2>
 
 <section id="fallecimientos" class="section">
 	<div class="container-xl">
@@ -365,7 +213,6 @@
 	</div>
 </section>
 
-
 <!-- Altas --------------------------------------->
 <section id="altas" class="section">
 	<div class="container-xl">
@@ -442,6 +289,99 @@
 	</div>
 </section>
 
+<section id="casos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Número de casos registrados por comunidad autónoma <small><a href="#casos" title="Enlace directo a esta sección">#</a></small></h2>
+			<p class="col-6 mb-3 small">Nota: Son datos de casos registrados, no tienen en cuenta los protocolos para obtención de datos (pruebas) de cada comunidad autónoma ni todos los casos “reales” que hay pero no han sido detectados.</p>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosTotal" aria-expanded="false" aria-controls="casosTotal">Total de casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosRelativo" aria-expanded="false" aria-controls="casosRelativo">Casos/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiples" aria-expanded="false" aria-controls="casosSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosSmallMultiplesRelativo" aria-expanded="false" aria-controls="casosSmallMultiplesRelativo">Small Multiples/100.000 hab.</button></li>
+				</ul>
+			</div>
+		</header>
+
+		<div class="row log switch show">
+			<div class="col-lg-11 graph show casosTotal">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse casosRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse casosSmallMultiples">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse casosSmallMultiplesRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma por 100.000 habitantes. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-11 graph show casosTotal">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse casosRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse casosSmallMultiples">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse casosSmallMultiplesRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_casos-registrados-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por comunidad autónoma por 100.000 habitantes. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+<section id="ingresos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Ingresos en la UCI por comunidad autónoma <small><a href="#ingresos" title="Enlace directo a esta sección">#</a></small></h2>
+			<p></p>
+			<div class="alert alert-danger" role="alert">A partir del 02.04.2020 los datos UCI de Castilla La Mancha, Castilla y León, Comunidad Valenciana, Galicia y Madrid son datos de prevalencia. Es decir, personas ingresadas en UCI a día de hoy. <a href="uci.html">Puedes ver los gráficos aquí</a>.</div>
+		</header>
+	</div>
+</section>
+
+<hr>
+<h2 id="provincias">Por provincias</h2>
+
 <!-- provincias -->
 <!-- Fallecidos por día -->
 <section id="fallecimientosDiaProvincias" class="section">
@@ -508,6 +448,75 @@
 					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-lineal.png" alt="" />
 					<figcaption class="figure-caption text-right">Muertes por día por provincia.</figcaption>
 				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="fallecimientos-provincia" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Fallecimientos por provincia <small><a href="#fallecimientos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosProvinciaTotal" aria-expanded="false" aria-controls="fallecidosProvinciaTotal">Total de fallecimientos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosProvinciaRelativo" aria-expanded="false" aria-controls="fallecidosProvinciaRelativo">Fallecimientos/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosProvinciaSmallMultiples" aria-expanded="false" aria-controls="fallecidosProvinciaSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="fallecidosProvinciaSmallMultiplesCCAA">Small Multiples CCAA</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-11 graph show fallecidosProvinciaTotal">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de fallecimientos.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosProvinciaRelativo">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-log.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala logarítmica</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosProvinciaSmallMultiples">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos acumulados. Escala logarítmica.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosProvinciaSmallMultiplesCCAA">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log_ccaa.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos acumulados agrupado por comunidad autónoma. Escala logarítmica.</figcaption>
+			  </figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-11 graph show fallecidosProvinciaTotal">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Total de fallecimientos. Escala lineal.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosProvinciaRelativo">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala lineal.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-11 graph collapse fallecidosProvinciaSmallMultiples">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-lineal.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos acumulados. Escala lineal.</figcaption>
+			  </figure>
 			</div>
 		</div>
 	</div>
@@ -583,76 +592,6 @@
 		</div>
 	</div>
 </section>
-
-<section id="fallecimientos-provincia" class="section">
-	<div class="container-xl">
-		<header class="row">
-			<h2 class="col">Fallecimientos por provincia <small><a href="#fallecimientos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
-			<div class="col-12 mb-3 scales">
-				Escala: 
-				<div class="btn-group" role="group" aria-label="Selector de escala">
-					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
-					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
-				</div>
-			</div>
-			<div class="col-12 graphs">
-				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosProvinciaTotal" aria-expanded="false" aria-controls="fallecidosProvinciaTotal">Total de fallecimientos</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosProvinciaRelativo" aria-expanded="false" aria-controls="fallecidosProvinciaRelativo">Fallecimientos/100.000 hab.</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosProvinciaSmallMultiples" aria-expanded="false" aria-controls="fallecidosProvinciaSmallMultiples">Small Multiples</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="fallecidosProvinciaSmallMultiplesCCAA">Small Multiples CCAA</button></li>
-				</ul>
-			</div>
-		</header>
-		<div class="row log switch show">
-			<div class="col-lg-11 graph show fallecidosProvinciaTotal">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-log.png" alt="" />
-					<figcaption class="figure-caption text-right">Total de fallecimientos.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-11 graph collapse fallecidosProvinciaRelativo">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-log.png" alt="" />
-				  <figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala logarítmica</figcaption>
-			  </figure>
-			</div>
-			<div class="col-lg-11 graph collapse fallecidosProvinciaSmallMultiples">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log.png" alt="" />
-				  <figcaption class="figure-caption text-right">Fallecimientos acumulados. Escala logarítmica.</figcaption>
-			  </figure>
-			</div>
-			<div class="col-lg-11 graph collapse fallecidosProvinciaSmallMultiplesCCAA">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-log_ccaa.png" alt="" />
-				  <figcaption class="figure-caption text-right">Fallecimientos acumulados agrupado por comunidad autónoma. Escala logarítmica.</figcaption>
-			  </figure>
-			</div>
-		</div>
-		<div class="row lin switch collapse">
-			<div class="col-lg-11 graph show fallecidosProvinciaTotal">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
-					<figcaption class="figure-caption text-right">Total de fallecimientos. Escala lineal.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-11 graph collapse fallecidosProvinciaRelativo">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
-				  <figcaption class="figure-caption text-right">Fallecimientos por cada 100.000 habitantes. Escala lineal.</figcaption>
-			  </figure>
-			</div>
-			<div class="col-lg-11 graph collapse fallecidosProvinciaSmallMultiples">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_fallecimientos-registrados-por-provincia-lineal.png" alt="" />
-				  <figcaption class="figure-caption text-right">Fallecimientos acumulados. Escala lineal.</figcaption>
-			  </figure>
-			</div>
-		</div>
-	</div>
-</section>
-
 
 <footer>
 	<div class="container-xl mt-5 pt-2 border-top">

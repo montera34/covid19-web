@@ -73,7 +73,9 @@
 </div>
 </div>
 
-<h2 id="ccaa">Por comunidades autónomas</h2>
+<div class="container-xl">
+  <h2 id="ccaa">Por comunidades autónomas</h2>
+</div>
 
 <section id="fallecimientos" class="section">
 	<div class="container-xl">
@@ -186,7 +188,7 @@
 			<div class="col-lg-11 graph collapse fallecidosDiaSmallMultiple">
 				<figure class="figure">
 					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-log_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-log_media.png" alt="" />
-					<figcaption class="figure-caption text-right">Muertes por día por comunidad autónoma.</figcaption>
+					<figcaption class="figure-caption text-right">Media de muertes por día por comunidad autónoma.</figcaption>
 				</figure>
 			</div>
 		</div>
@@ -206,7 +208,7 @@
 			<div class="col-lg-11 graph collapse fallecidosDiaSmallMultiple">
 				<figure class="figure">
 					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-lineal_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-lineal_media.png" alt="" />
-					<figcaption class="figure-caption text-right">Muertes por día por comunidad autónoma.</figcaption>
+					<figcaption class="figure-caption text-right">Medida de muertes por día por comunidad autónoma.</figcaption>
 				</figure>
 			</div>
 		</div>
@@ -284,6 +286,56 @@
 				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_altas-por-comunidad-autonoma-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_altas-por-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de altas por comunidad autónoma por cada 100.000 habitantes. Small multiples usando escala lineal.</figcaption>
 			</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Altas por día ----------------->
+<section id="altasDia" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Altas por día por comunidad autónoma <small><a href="#altasDia" title="Enlace directo a esta sección">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="altasDiaMedia" aria-expanded="false" aria-controls="altasDiaMedia">Media de altas por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="altasDiaSmallMultiple" aria-expanded="false" aria-controls="altasDiaSmallMultiple">Small multiples</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-11 graph show altasDiaMedia">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-superpuesto-log_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-superpuesto-log_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de altas por día en los 6 días anteriores por comunidad autónoma.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse altasDiaSmallMultiple">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-log_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-log_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de altas por día por comunidad autónoma.</figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-11 graph show altasDiaMedia">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-superpuesto-lineal_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-superpuesto-lineal_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de altas por día en los 6 días anteriores por comunidad autónoma.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse altasDiaSmallMultiple">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-lineal_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_altas-por-dia-comunidad-autonoma-lineal_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de altas por día por comunidad autónoma.</figcaption>
+				</figure>
 			</div>
 		</div>
 	</div>
@@ -380,7 +432,9 @@
 </section>
 
 <hr>
-<h2 id="provincias">Por provincias</h2>
+<div class="container-xl">
+  <h2 id="provincias">Por provincias</h2>
+</div>
 
 <!-- provincias -->
 <!-- Fallecidos por día -->
@@ -661,7 +715,7 @@
 				$(this).addClass('active')
 			}		
 		})
-	$('#altas .btn-switch').on('click',function() {
+	  $('#altas .btn-switch').on('click',function() {
 			target='#altas .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
 				console.log('HAR!')
@@ -670,6 +724,18 @@
 				$('#altas .switch').collapse('hide')
 				$(target).collapse('show')
 				$('#altas .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+    $('#altasDia .btn-switch').on('click',function() {
+			target='#altasDia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#altasDia .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#altasDia .scales .active').removeClass('active')
 				$(this).addClass('active')
 			}		
 		})
@@ -767,6 +833,18 @@
 				$('#altas .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#altas .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#altasDia .btn-collapse').on('click',function() {
+
+			target='#altasDia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#altasDia .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#altasDia .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

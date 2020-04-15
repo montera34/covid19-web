@@ -80,12 +80,14 @@
 <section id="dia0" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col-12">Fallecimientos por día desde el primer día que hubo 5 fallecidos o más <small><a href="#dia0" title="Enlace directo a esta sección">#</a></small></h2>
+			<h2 class="col-12">Fallecimientos desde el primer día que hubo 5 fallecidos o más <small><a href="#dia0" title="Enlace directo a esta sección">#</a></small></h2>
 			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="daysSinceInteractivo" aria-expanded="false" aria-controls="daysSinceInteractivo">Interactivo</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="daysSinceTotal" aria-expanded="false" aria-controls="daysSinceTotal">Total de fallecimientos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="daysSinceInteractivo" aria-expanded="false" aria-controls="daysSinceInteractivo">Acumulados (interactivo)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="daysSinceTotal" aria-expanded="false" aria-controls="daysSinceTotal">Acumulados</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="daysSinceRelativo" aria-expanded="false" aria-controls="daysSinceRelativo">Fallecimientos/millón hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="daysSinceTotalDay" aria-expanded="false" aria-controls="daysSinceTotalDayInteractivo">Muertes por día (interactivo)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="daysSinceTotalDay" aria-expanded="false" aria-controls="daysSinceTotalDay">Muertes por día</button></li>
 				</ul>
 			</div>
 		</header>
@@ -100,7 +102,7 @@
 			<div class="col-lg-12 graph collapse daysSinceTotal">
 				<figure class="figure">
 					<a href="../covid19-r/img/compare/covid19_fallecimientos-por-region-superpuesto-offset-log_since-5deceased.png"><img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/compare/covid19_fallecimientos-por-region-superpuesto-offset-log_since-5deceased.png" data-srcset="../covid19-r/img/compare/covid19_fallecimientos-por-region-superpuesto-offset-log_since-5deceased.png" alt="" /></a>
-					<figcaption class="figure-caption text-right">Número de fallecimientos acumulados por día desde el primer día que hubo 5 fallecimientos o más en regiones de España (CCAA) e Italia. Escala logarítmica.</figcaption>
+					<figcaption class="figure-caption text-right">Número de fallecimientos acumulados por día desde el primer día que hubo 5 fallecimientos o más en regiones de España (CCAA), Italia, Francia y China. Escala logarítmica.</figcaption>
 				</figure>
 			</div>
 			<!--<div class="col-lg-12">
@@ -113,6 +115,19 @@
 				<figure class="figure">
 					<a href="../covid19-r/img/compare/covid19_fallecimientos-por-region-superpuesto-offset-per-cienmil-log_since-5deceased.png"><img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/compare/covid19_fallecimientos-por-region-superpuesto-offset-per-cienmil-log_since-5deceased.png" data-srcset="../covid19-r/img/compare/covid19_fallecimientos-por-region-superpuesto-offset-per-cienmil-log_since-5deceased.png" alt="" /></a>
 					<figcaption class="figure-caption text-right">Número de fallecimientos acumulados por día por 1.000.000 habitantes desde el primer día que hubo 5 fallecimientos o más por millón de habitantes en regiones de España (CCAA) e Italia. Escala logarítmica.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-12 graph collapse daysSinceTotalDayInteractivo">
+				<div class="d-none d-sm-block">
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item" src="../covid19-r/interactive/covid19-country-regions-compare-daily-deaths.html"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12 graph collapse daysSinceTotalDay">
+				<figure class="figure">
+					<a href="../covid19-r/img/compare/covid19_muertes-dia-por-region-superpuesto-offset-log_since-5deceased_en.png"><img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/compare/covid19_muertes-dia-por-region-superpuesto-offset-log_since-5deceased_en.png" data-srcset="../covid19-r/img/compare/covid19_muertes-dia-por-region-superpuesto-offset-log_since-5deceased_en.png" alt="" /></a>
+					<figcaption class="figure-caption text-right">Media de muertes por día en los 6 días anteriores en regiones de España (CCAA), Italia, Francia y China. Escala logarítmica.</figcaption>
 				</figure>
 			</div>
 		</div>

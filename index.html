@@ -1140,6 +1140,18 @@
 				$(this).addClass('active')
 			}		
 		})
+    $('#resumenccaa .btn-switch').on('click',function() {
+			target='#resumenccaa .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#resumenccaa .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#resumenccaa .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
    $('#fallecimientosDiaProvincias .btn-switch').on('click',function() {
 			target='#fallecimientosDiaProvincias .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
@@ -1246,6 +1258,18 @@
 				$('#altasDia .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#altasDia .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#resumenccaa .btn-collapse').on('click',function() {
+
+			target='#resumenccaa .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#resumenccaa .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#resumenccaa .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

@@ -418,7 +418,81 @@
 	</div>
 </section>
 
-
+<!--- resumen CCAA -->
+<section id="resumenccaa" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Resumen por comunidad autónoma: casos, recuperados y fallecidos <small><a href="#resumenccaa" title="Enlace directo a esta sección">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="resumenAcumulados" aria-expanded="false" aria-controls="resumenAcumulados">Resumen (acumulados)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="resumenAcumuladosRelativo" aria-expanded="false" aria-controls="resumenAcumuladosRelativo">Resumen acumulados/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="resumenDia" aria-expanded="false" aria-controls="resumenDia">Resumen por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="resumenDiaRelativo" aria-expanded="false" aria-controls="resumenDiaMedia">Resumen por día media</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-11 graph show resumenAcumulados">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/ccovid19_mix-comunidad-autonoma-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_mix-comunidad-autonoma-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse resumenAcumuladosRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_mix-comunidad-autonoma-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_mix-comunidad-autonoma-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos. por cada 100.000 habitantes. Escala logarítmica.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse resumenDia">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_mix-daily-comunidad-autonoma-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_mix-daily-comunidad-autonoma-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos por día por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse resumenDiaMedia">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-log_media.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-log_media.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos por día (media de los últimos 6 días ) por comunidad autónoma usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-11 graph show resumenAcumulados">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_mix-comunidad-autonoma-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_mix-comunidad-autonoma-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-11 graph collapse resumenAcumuladosRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_mix-comunidad-autonoma-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_mix-comunidad-autonoma-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos. por cada 100.000 habitantes. Escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse resumenDia">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_mix-daily-comunidad-autonoma-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_mix-daily-comunidad-autonoma-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos por día por comunidad autónoma. Small multiples usando escala lineal.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-11 graph collapse resumenDiaMedia">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_mix-daily-avg-comunidad-autonoma-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_mix-daily-avg-comunidad-autonoma-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos, recuperados y fallecidos por día (media de los últimos 6 días ) por comunidad autónoma usando escala lineal.</figcaption>
+			</figure>
+			</div>
+		</div>
+	</div>
+</section>
 
 
 <section id="ingresos" class="section">
@@ -430,6 +504,8 @@
 		</header>
 	</div>
 </section>
+
+
 
 <hr>
 <div class="container-xl">

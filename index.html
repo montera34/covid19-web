@@ -54,7 +54,7 @@
 <div class="container-xl">
 <div class="row">
 	<h1 class="col-12">Propagación del COVID-19 en España. Análisis por comunidades autónomas y provincias</h1>
-	<p class="col-lg-4"><strong>Los datos</strong> del COVID-19 en España están sacados del <a href="https://github.com/datadista/datasets/tree/master/COVID%2019">repositorio de Datadista</a>, que los extrae a su vez de las tablas que publica el Ministerio de Sanidad, Consumo y Bienestar Social en incómodos PDF.<br>¡Gracias por esta labor <a href="https://datadista.com/">Datadistas</a>!<br><br>Hemos recopilado datos provincia en el proyecto colaborativo <a href="https://github.com/montera34/escovid19data">EsCOVID19data</a> ¡súmate para ayudarnos!</p>
+	<p class="col-lg-4"><strong>Los datos por comunidades autónomas</strong> del COVID-19 en España <a href="https://covid19.isciii.es/">están sacados del ISCIII</a> (antes usábamos el <a href="https://github.com/datadista/datasets/tree/master/COVID%2019">repositorio de Datadista</a>, que los extrae a su vez de las tablas que publica el Ministerio de Sanidad, Consumo y Bienestar Social en incómodos PDF.<br>¡Gracias por esta labor <a href="https://datadista.com/">Datadistas</a>!)<br><br><strong>Los datos por provincias</strong> provienen del proyecto colaborativo que impulsamos <a href="https://github.com/montera34/escovid19data">EsCOVID19data</a> ¡súmate para ayudarnos!</p>
 	<p class="col-lg-4"><strong>Los gráficos</strong> que aparece en esta página están generados usando los <a href="https://code.montera34.com:4443/numeroteca/covid19/">scripts de R que puedes consultar y descargar en este repositorio</a>. Además publicamos los datos en un único archivo unificado (<a href="https://code.montera34.com:4443/numeroteca/covid19/-/blob/master/README.md">leed el README</a>).<br>Más <a href="http://numeroteca.org/2020/03/12/covid19-comunidades-autonomas-espana/">sobre el proceso de producción de estos gráficos</a> en el blog de numeroteca.</p>
 	<p class="col-lg-4"><strong>La escala</strong> que se suele usar para representar propagaciones de virus es la logarítmica ya que permite evaluar si el nivel de crecimiento se sostiene en el tiempo de forma sencilla. Además, la escala lineal no deja ver algunos de los casos representados, comunidades autónomas en estos gráficos (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">más sobre escala logarítmica y pandemias</a>). Sin embargo, hay veces que la escala lineal es útil. Puedes elegir cuál ver.</p>
 </div>
@@ -597,8 +597,8 @@
 			</div>
 			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="expTrayectoria" aria-expanded="false" aria-controls="resumenAcumulados">Trayectoria</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="expMuertesvsCasos" aria-expanded="false" aria-controls="resumenAcumuladosFree">Fallecimientos vs Casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="expTrayectoria" aria-expanded="false" aria-controls="expTrayectoria">Trayectoria</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="expMuertesvsCasos" aria-expanded="false" aria-controls="expMuertesvsCasos">Fallecimientos vs Casos</button></li>
 				</ul>
 			</div>
 		</header>
@@ -609,10 +609,10 @@
 					<figcaption class="figure-caption text-right">Fallecidos 7 días anteriores vs / Total fallecidos. Explicación sobre este gráfico en <a href="https://aatishb.com/covidtrends/">aatishb.com/covidtrends/</a> y <a href="https://postdata.biz/es/variedades/covid.html">postdata.biz</a> </figcaption>
 				</figure>
 			</div>
-			<div class="col-lg-11 graph collapse expTrayectoria">
+			<div class="col-lg-11 graph collapse expMuertesvsCasos">
 				<figure class="figure">
 					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_trayectoria-comunidad-autonoma-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_trayectoria-comunidad-autonoma-superpuesto-lineal.png" alt="" />
-					<figcaption class="figure-caption text-right">Fallecidos 7 días anteriores vs / Total fallecidos. Explicación sobre este grico en <a href="https://aatishb.com/covidtrends/">aatishb.com/covidtrends/</a> y <a href="https://postdata.biz/es/variedades/covid.html">postdata.biz</a> </figcaption>
+					<figcaption class="figure-caption text-right">Fallecidos 7 días anteriores vs / Total fallecidos. Explicación sobre este gráfico en <a href="https://aatishb.com/covidtrends/">aatishb.com/covidtrends/</a> y <a href="https://postdata.biz/es/variedades/covid.html">postdata.biz</a> </figcaption>
 				</figure>
 			</div>
 		</div>
@@ -638,7 +638,8 @@
 		<header class="row">
 			<h2 class="col">Ingresos en la UCI por comunidad autónoma <small><a href="#ingresos" title="Enlace directo a esta sección">#</a></small></h2>
 			<p></p>
-			<div class="alert alert-danger" role="alert">A partir del 02.04.2020 los datos UCI de Castilla La Mancha, Castilla y León, Comunidad Valenciana, Galicia y Madrid son datos de prevalencia. Es decir, personas ingresadas en UCI a día de hoy. Madrid  <a href="uci.html">Puedes ver los gráficos aquí</a>.</div>
+			<div class="alert alert-danger" role="alert">A partir del 02.04.2020 los datos UCI de Castilla La Mancha, Castilla y León, Comunidad Valenciana, Galicia y Madrid son datos de prevalencia. Es decir, personas ingresadas en UCI a día de hoy. Madrid  <a href="uci.html">Puedes ver los gráficos aquí</a>.<br>
+Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es posible comparar unas comunidades autónomas con otras.</div>
 		</header>
 	</div>
 </section>

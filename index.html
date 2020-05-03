@@ -583,17 +583,61 @@
 	</div>
 </section>
 
+<!-- experimentos por comunida autónoma -->
+<section id="experimentos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Varios por comunidad autónoma <small><a href="#experimentos" title="Enlace directo a esta sección">#</a></small></h2>
+      <div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="expTrayectoria" aria-expanded="false" aria-controls="resumenAcumulados">Trayectoria</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="expMuertesvsCasos" aria-expanded="false" aria-controls="resumenAcumuladosFree">Resumen (acumulados)- Áreas</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-11 graph show expTrayectoria">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_trayectoria-comunidad-autonoma-superpuesto-log.png" data-srcset="../covid19-r/img/spain/regions/covid19_trayectoria-comunidad-autonoma-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Fallecidos 7 días anteriores vs / Total fallecidos. Explicación sobre este gráfico en <a href="https://aatishb.com/covidtrends/">aatishb.com/covidtrends/</a> y <a href="https://postdata.biz/es/variedades/covid.html">postdata.biz</a> </figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="row log switch collapse">
+			<div class="col-lg-11 graph collapse expTrayectoria">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_trayectoria-comunidad-autonoma-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/regions/covid19_trayectoria-comunidad-autonoma-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Fallecidos 7 días anteriores vs / Total fallecidos. Explicación sobre este grico en <a href="https://aatishb.com/covidtrends/">aatishb.com/covidtrends/</a> y <a href="https://postdata.biz/es/variedades/covid.html">postdata.biz</a> </figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="row log switch collapse">
+			<div class="col-lg-11 graph collapse expMuertesvsCasos">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/regions/covid19_muertes-vs-casos-ccaa-relativo.png" data-srcset="../covid19-r/img/spain/regions/covid19_muertes-vs-casos-ccaa-relativo.png.png" alt="" />
+					<figcaption class="figure-caption text-right">Fallecidos por habitante vs Fallecidos por habitante.</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
 
 <section id="ingresos" class="section">
 	<div class="container-xl">
 		<header class="row">
 			<h2 class="col">Ingresos en la UCI por comunidad autónoma <small><a href="#ingresos" title="Enlace directo a esta sección">#</a></small></h2>
 			<p></p>
-			<div class="alert alert-danger" role="alert">A partir del 02.04.2020 los datos UCI de Castilla La Mancha, Castilla y León, Comunidad Valenciana, Galicia y Madrid son datos de prevalencia. Es decir, personas ingresadas en UCI a día de hoy. <a href="uci.html">Puedes ver los gráficos aquí</a>.</div>
+			<div class="alert alert-danger" role="alert">A partir del 02.04.2020 los datos UCI de Castilla La Mancha, Castilla y León, Comunidad Valenciana, Galicia y Madrid son datos de prevalencia. Es decir, personas ingresadas en UCI a día de hoy. Madrid  <a href="uci.html">Puedes ver los gráficos aquí</a>.</div>
 		</header>
 	</div>
 </section>
-
 
 
 <hr>
@@ -1247,6 +1291,18 @@
 				$(this).addClass('active')
 			}		
 		})
+    $('#experimentos .btn-switch').on('click',function() {
+			target='#experimentos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#experimentos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#experimentos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
    $('#fallecimientosDiaProvincias .btn-switch').on('click',function() {
 			target='#fallecimientosDiaProvincias .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
@@ -1365,6 +1421,18 @@
 				$('#resumenccaa .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#resumenccaa .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#experimentos .btn-collapse').on('click',function() {
+
+			target='#experimentos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#experimentos .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#experimentos .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

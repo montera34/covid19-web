@@ -587,7 +587,7 @@
 <section id="experimentos" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col">Varios por comunidad autónoma <small><a href="#experimentos" title="Enlace directo a esta sección">#</a></small></h2>
+			<h2 class="col">Otros gráficos por comunidad autónoma <small><a href="#experimentos" title="Enlace directo a esta sección">#</a></small></h2>
       <div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
@@ -673,11 +673,12 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 			</div>
 			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosDiaMediaProv" aria-expanded="false" aria-controls="fallecidosDiaMediaProv">Media de fallecimientos por día</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaAbsolutoProv" aria-expanded="false" aria-controls="fallecidosDiaAbsolutoProv">Fallecimientos por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="fallecidosDiaMediaProv" aria-expanded="false" aria-controls="fallecidosDiaMediaProv">Media de muertes por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaAbsolutoProv" aria-expanded="false" aria-controls="fallecidosDiaAbsolutoProv">Muertes por día</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaSmallMultipleProv" aria-expanded="false" aria-controls="fallecidosDiaSmallMultipleProv">Small multiples</button></li>
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaSmallMultiplesCCAA" aria-expanded="false" aria-controls="fallecidosDiaSmallMultiplesCCAA">Small Multiples por Comunidad Autónoma</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaSmallMultiplesCCAA" aria-expanded="false" aria-controls="fallecidosDiaSmallMultiplesCCAA">Small Multiples por CCAA</button></li>
 				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaSmallMultiplesCCAAdetalle" aria-expanded="false" aria-controls="fallecidosDiaSmallMultiplesCCAAdetalle">Small Multiples en detalle</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="fallecidosDiaMediaInteractivo" aria-expanded="false" aria-controls="fallecidosDiaMediaInteractivo">Interactivo</button></li>
 				</ul>
 			</div>
 		</header>
@@ -863,6 +864,13 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 			      </figure>
   			  </div>
 			  </div>
+			</div>
+			<div class="col-lg-12 graph show fallecidosDiaMediaInteractivo">
+				<div class="d-none d-sm-block">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="../covid19-r/interactive/daily-deaths-provinces-index.html"></iframe>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row lin switch collapse">

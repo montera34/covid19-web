@@ -1609,29 +1609,47 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 <section id="experimentos-provincia" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col-10">Trayectoria por provincia <small><a href="#experimentos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
-<!--			<div class="col-12 mb-3 scales">
+			<h2 class="col-10">Trayectorias por provincia <small><a href="#experimentos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
+			 <!--<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
 					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
 					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
 				</div>
-			</div>
+			</div>-->
 			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosProvinciaTotal" aria-expanded="false" aria-controls="casosProvinciaTotal">Total de casos</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaRelativo" aria-expanded="false" aria-controls="casosProvinciaRelativo">Casos/100.000 hab.</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiples" aria-expanded="false" aria-controls="casosProvinciaSmallMultiples">Small Multiples</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosProvinciaSmallMultiplesCCAA">Small Multiples CCAA</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosProvinciaTotal" aria-expanded="false" aria-controls="casosProvinciaTotal">Trayectoria fallecidos/acumulados</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="trayectoria2" aria-expanded="false" aria-controls="casosProvinciaRelativo">Trayectoria fallecidos/total fallecidos</button></li>
+					<!--<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiples" aria-expanded="false" aria-controls="casosProvinciaSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosProvinciaSmallMultiplesCCAA">Small Multiples CCAA</button></li>-->
 				</ul>
-			</div> -->
+			</div>
 		</header>
 		<div class="row log switch show">
 			<div class="col-lg-10 graph show casosProvinciaTotal">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-vs-casos-provincia-relativo.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-vs-casos-provincia-relativo.png" alt="" />
-				<figcaption class="figure-caption text-right">Fallecimientos y casos acumulados, valores relativos a población.</figcaption>
-			</figure>
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-vs-casos-provincia-relativo.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-vs-casos-provincia-relativo.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos y casos acumulados, valores relativos a población.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse trayectoria2">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-facet-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-facet-lineal.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos frente  fallecidos total.</figcaption>
+			  </figure>
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-facet-lineal_rejilla.png" data-srcset="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-facet-lineal_rejilla.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos frente  fallecidos total.</figcaption>
+			  </figure>
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-facet-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-facet-log.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos frente  fallecidos total.</figcaption>
+			  </figure>
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_trayectoria-provincia-superpuesto-log.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecimientos frente  fallecidos total.</figcaption>
+			  </figure>
 			</div>
 		</div>
 		<div class="row lin switch collapse">
@@ -1803,6 +1821,18 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 			}		
 		})
 
+		$('#experimentos-provincia .btn-switch').on('click',function() {
+			target='#experimentos-provincia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+				console.log('HAR!')
+			}
+			else {
+				$('#experimentos-provincia .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#experimentos-provincia .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
 		// fade in and out graphs
 		$('#casos .btn-collapse').on('click',function() {
 
@@ -1945,6 +1975,18 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 				$('#fallecimientos-provincia .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#fallecimientos-provincia .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#experimentos-provincia .btn-collapse').on('click',function() {
+
+			target='#experimentos-provincia .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#experimentos-provincia .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#experimentos-provincia .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

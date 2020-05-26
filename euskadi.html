@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es_ES">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Propagación del coronavirus en España</title>
+
+	<!-- generic meta -->
+	<meta content="Montera34" name="author" />
+	<meta content="Análisis de la propagación del Coronavirus (COVID-19) por comunidades autónomas en España" name="description" />
+	<meta content="coronavirus, COVID19, COVID_19, COVID-19, visualización de datos, análisis de datos" name="keywords" />
+	<!-- facebook meta -->
+	<meta property="og:title" content="Propagación del coronavirus en España" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Análisis de la propagación del coronavirus (COVID-19) por comunidades autónomas en España" />
+	<meta property="og:url" content="https://lab.montera34.com/covid19" />
+	<meta property="og:image" content="https://lab.montera34.com/covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-log_media.png" />
+	<meta property="og:locale" content="es_ES" />
+	<!-- twitter meta -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@montera34">
+	<meta name="twitter:title" content="Propagación del coronavirus en España" />
+	<meta name="twitter:description" content="Análisis de la propagación del coronavirus (COVID-19) por comunidades autónomas en España" />
+	<meta name="twitter:creator" content="@skotperez" />
+	<meta name="twitter:image" content="https://lab.montera34.com/covid19-r/img/spain/regions/covid19_muertes-por-dia-comunidad-autonoma-superpuesto-log_media.png">
+	<meta property="twitter:account_id" content="1491442110" />
+	
+	<link rel="author" href="https://montera34.com"/>
+</head>
+<body class="bg-light">
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
+<div class="container-xl">
+		<a class="navbar-brand" href="#">Propagación del COVID-19 en Euskadi</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topbar" aria-controls="topbar" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="topbar">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="index.html">España</a></li>
+			<li class="nav-item active"><a class="nav-link" href="index.html">Euskadi</a></li>
+			<li class="nav-item"><a class="nav-link" href="fr.html">Francia</a></li>
+			<li class="nav-item"><a class="nav-link" href="it.html">Italia</a></li>
+			<li class="nav-item"><a class="nav-link" href="compara.html">Comparación entre países</a></li>
+			<li class="nav-item"><a class="nav-link" href="datos.html">Los datos</a></li>
+		</ul>
+		<ul class="lang navbar-nav">
+			<li class="nav-item"><span title="Español" class="small nav-link text-dark bg-white">ES</span></li>
+			<li class="nav-item"><a title="Francés" class="small nav-link text-white bg-dark" href="fr/">FR</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+	<h1 class="col-12">Propagación del COVID-19 en España. Análisis por comunidades autónomas y provincias</h1>
+	<p class="col-lg-4"><strong>Los datos por comunidades autónomas</strong> del COVID-19 en España <a href="https://covid19.isciii.es/">están sacados del ISCIII</a> (antes usábamos el <a href="https://github.com/datadista/datasets/tree/master/COVID%2019">repositorio de Datadista</a>, que los extrae a su vez de las tablas que publica el Ministerio de Sanidad, Consumo y Bienestar Social en incómodos PDF.<br>¡Gracias por esta labor <a href="https://datadista.com/">Datadistas</a>!)<br><br><strong>Los datos por provincias</strong> provienen del proyecto colaborativo que impulsamos <a href="https://github.com/montera34/escovid19data">EsCOVID19data</a> ¡súmate para ayudarnos!</p>
+	<p class="col-lg-4"><strong>Los gráficos</strong> que aparece en esta página están generados usando los <a href="https://code.montera34.com:4443/numeroteca/covid19/">scripts de R que puedes consultar y descargar en este repositorio</a>. Además publicamos los datos en un único archivo unificado (<a href="https://code.montera34.com:4443/numeroteca/covid19/-/blob/master/README.md">leed el README</a>).<br>Más <a href="http://numeroteca.org/2020/03/12/covid19-comunidades-autonomas-espana/">sobre el proceso de producción de estos gráficos</a> en el blog de numeroteca.</p>
+	<p class="col-lg-4"><strong>La escala</strong> que se suele usar para representar propagaciones de virus es la logarítmica ya que permite evaluar si el nivel de crecimiento se sostiene en el tiempo de forma sencilla. Además, la escala lineal no deja ver algunos de los casos representados, comunidades autónomas en estos gráficos (<a href="https://twitter.com/jburnmurdoch/status/1237748598051409921">más sobre escala logarítmica y pandemias</a>). Sin embargo, hay veces que la escala lineal es útil. Puedes elegir cuál ver.</p>
+</div>
+
+<div class="row">
+	<div class="col-md-8 offset-md-2 mt-3">
+		<div class="alert alert-info alert-dismissible fade show" role="alert">
+			<p><strong>Los datos pueden contener errores.</strong> Los datos usados para realizar los análisis están sacados de diferentes fuentes oficiales y pueden contener errores. Si ves algo raro, no dudes <a class="alert-link" href="https://montera34.com/contacto">en notificárnoslo</a>. Puedes consultar un listado detallado de todas las fuentes en <a class="alert-link" href="datos.html">la sección de datos</a>.</p>
+			<hr>
+			<p><strong>No somos especialistas en epidemiología.</strong> Nuestra intención al publicar esta página es poner a disposición gráficos lo más claros posible para proporcionar herramientas que nos ayuden a entender la situación.</p>
+			<hr>
+			<p class="mb-0"><strong>Las gráficas se actualizan a diario.</strong> Intentamos actualizar las gráficas a diario para mantener la información actualizada. También vamos incluyendo nuevos análisis conforme vamos consiguiendo más datos.</p>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+		</div>
+	</div>
+</div>
+</div>
+
+<section id="casos" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Evolución en hospitales <small><a href="#casos" title="Enlace directo a esta sección">#</a></small></h2>
+			<!--<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>-->
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="hospPer" aria-expanded="false" aria-controls="hospPer">Ingresados (porcentaje %)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospTot" aria-expanded="false" aria-controls="hospTot">Ingresados</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospMax" aria-expanded="false" aria-controls="hospMax">Ingresados (escalado 100%)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospIngresados" aria-expanded="false" aria-controls="hospIngresados">Ingresados en planta</button></li>
+				</ul>
+			</div>
+		</header>
+
+		<div class="row lineal switch show">
+			<div class="col-lg-10 graph show hospPer">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco_percent.png" data-srcset="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco_percent.png" alt="" />
+				  <figcaption class="figure-caption text-right">Evolución por hospitales en Euskadi. El 100% es el total de ingresados hasta ese día.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospTot">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco.png" data-srcset="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco.png" alt="" />
+				  <figcaption class="figure-caption text-right">Evolución por hospitales en Euskadi.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospMax">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco.png" data-srcset="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco.png" alt="" />
+				  <figcaption class="figure-caption text-right">Evolución por hospitales en Euskadi.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospIngresados">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco.png" data-srcset="../covid19-r/img/spain/euskadi/covid19_hosp-mix-pais-vasco.png" alt="" />
+				<figcaption class="figure-caption text-right">Ingresados en planta por hospitales.</figcaption>
+			</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container-xl mt-5 pt-2 border-top">
+		<div class="row">
+			<p class="col-lg-12"><img src="img/m34.png" alt="" /> <span class="ml-2 text-secondary">Realizado por <a class="text-body" href="https://montera34.com">Montera34</a>, disponible bajo <a class="text-body" href="https://code.montera34.com:4443/skotperez/covid19-web/-/blob/master/LICENSE.md">licencia GNU GPL 3</a> y <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY SA</a> | <a href="https://code.montera34.com:4443/numeroteca/covid19">Código para generar los gráficos</a> | <a href="https://lab.montera34.com/covid19/datos.html">Datos</a> | <a class="text-body" href="https://montera34.com/contacto/">Contacto</a> | <a class="text-body" href="https://twitter.com/montera34">@montera34</a>.</span></p>
+		</div>
+	</div>
+</footer>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/lazy.images.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script>
+		// top navbar links status
+		$('#topbar .nav-link').on('click',function() {
+			$('#topbar .nav-link').removeClass('active')
+			$(this).addClass('active')
+		})
+
+		// switch between log and lineal graphs
+		$('#casos .btn-switch').on('click',function() {
+			target='#casos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#casos .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
+		// fade in and out graphs
+		$('#casos .btn-collapse').on('click',function() {
+
+			target='#casos .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#casos .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#casos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+	</script>
+	<script type="text/javascript" src="js/stats.js"></script>
+</boby>
+</html>

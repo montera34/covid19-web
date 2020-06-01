@@ -661,6 +661,219 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 </div>
 
 <!-- provincias -->
+<!-- Hospitalizados  -->
+<section id="hospProvincias" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Hospitalizados por provincia <small><a href="#hospProvincias" title="Enlace directo a esta sección">#</a></small></h2>
+			<p>No se muestran las provincias con datos de hospitalizados acumulados</p>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="hospRejilla" aria-expanded="false" aria-controls="hospRejilla">Hospitalizados (rejilla)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospRejillaccaa" aria-expanded="false" aria-controls="hospRejillaccaa">Hospitalizados (ccaa)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospRejillarel" aria-expanded="false" aria-controls="hospRejillarel">Hospitalizados por 100.000 hab.</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospSuperpuesto" aria-expanded="false" aria-controls="hospSuperpuesto">Superpuesto</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospSuperpuestoRel" aria-expanded="false" aria-controls="hospSuperpuestoRel">Superpuesto por 100.000 hab.</button></li>
+				</ul>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospArag" aria-expanded="false" aria-controls="hospArag">Aragón</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospCast" aria-expanded="false" aria-controls="hospCast">Castilla - La Mancha</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospCastleon" aria-expanded="false" aria-controls="hospCastleon">Castilla y León</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospCata" aria-expanded="false" aria-controls="hospCata">Cataluña</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospComu" aria-expanded="false" aria-controls="hospComu">C. Valenciana</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospExtr" aria-expanded="false" aria-controls="hospExtr">Extremadura</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospGali" aria-expanded="false" aria-controls="hospGali">Galicia</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospMadr" aria-expanded="false" aria-controls="hospMadr">Madrid</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospPais" aria-expanded="false" aria-controls="hospPais">País Vasco</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch collapse">
+			<div class="col-lg-10 graph show hospRejilla">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Hospitalizados por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospRejillaccaa">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-log_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-log_ccaa.png" alt="" />
+					<figcaption class="figure-caption text-right">Hospitalizados por provincia agrupado por comunidades autónomas.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospRejillarel">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-per-cienmil-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Hospitalizados por provincia por 100.000 habitantes.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospSuperpuesto">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-log.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados por provincia.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospSuperpuestoRel">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-per-cienmil-log.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados por provincia por 100.000 habitantes.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospArag">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-arag.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Aragón.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospCast">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cast.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Castilla - La Mancha.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospCastleon">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Castilla y León.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospCata">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cata.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cata.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Cataluña.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospComu">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-comu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-comu.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en C. Valenciana.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospExtr">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-extr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-extr.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Extremadura.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospGali">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-gali.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-gali.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Galicia.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospMadr">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-madr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-madr.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Comunidad de Madrid.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospPais">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Euskadi.</figcaption>
+			  </figure>
+			</div>
+		</div>
+		<div class="row lin switch show">
+			<div class="col-lg-10 graph show hospRejilla">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Hospitalizados por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospRejillaccaa">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-lineal_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-lineal_ccaa.png" alt="" />
+					<figcaption class="figure-caption text-right">Hospitalizados por provincia agrupado CCAA.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospRejillarel">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-per-cienmil-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Hospitalizados por provincia por 100.000 habitantes.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospSuperpuesto">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-lineal.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados por provincia superpuesto.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospSuperpuestoRel">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hospitalizados-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados por provincia superpuesto por 100.000 habitantes.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospArag">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-arag.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Aragón.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospCast">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cast.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Castilla - La Mancha.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospCastleon">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Castilla y León.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospCata">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cata.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cata.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Cataluña.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospComu">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-comu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-comu.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en C. Valenciana.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospExtr">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-extr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-extr.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Extremadura.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospGali">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-gali.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-gali.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Galicia.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospMadr">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-madr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-madr.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Comunidad de Madrid.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospPais">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en Euskadi.</figcaption>
+			  </figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
 <!-- Fallecidos por día -->
 <section id="fallecimientosDiaProvincias" class="section">
 	<div class="container-xl">
@@ -1775,6 +1988,17 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 				$(this).addClass('active')
 			}		
 		})
+		$('#hospProvincias .btn-switch').on('click',function() {
+			target='#hospProvincias .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#hospProvincias .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#hospProvincias .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
    $('#casosDiaProvincias .btn-switch').on('click',function() {
 			target='#casosDiaProvincias .'+$(this).attr('data-target')
 			if ( $(target).hasClass('show') ) {
@@ -1941,6 +2165,18 @@ Mantenemos los gráficos para que puedas ver cómo están los datos, pero no es 
 				$('#experimentos .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#experimentos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+	  $('#hospProvincias .btn-collapse').on('click',function() {
+
+			target='#hospProvincias .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#hospProvincias .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#hospProvincias .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

@@ -742,14 +742,14 @@
 			</div>
 			<div class="col-12 graphs">
 				<ul class="list-inline">
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosDiaUltimos" aria-expanded="false" aria-controls="casosDiaUltimos">14 últimos días</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosDiaUltimos" aria-expanded="false" aria-controls="casosDiaUltimos">14 últimos días (rejilla)</button></li>
 				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaPCR" aria-expanded="false" aria-controls="casosDiaMediaPCR">PCR+</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaProv" aria-expanded="false" aria-controls="casosDiaMediaProv">Media de casos por día</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaAbsolutoProv" aria-expanded="false" aria-controls="casosDiaAbsolutoProv">Casos por día</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultipleProv" aria-expanded="false" aria-controls="casosDiaSmallMultipleProv">Small multiples</button></li>
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAA">Small Multiples por CCAA</button></li>
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAAdetalle" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAAdetalle">Small Multiples en detalle</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaInteractivo" aria-expanded="false" aria-controls="casosDiaMediaInteractivo">Interactivo</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultipleProv" aria-expanded="false" aria-controls="casosDiaSmallMultipleProv">Rejilla</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAA">Rejilla por CCAA</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAAdetalle" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAAdetalle">Por CCAA en detalle</button></li>
+					<!--<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaInteractivo" aria-expanded="false" aria-controls="casosDiaMediaInteractivo">Interactivo</button></li>-->
 				</ul>
 			</div>
 		</header>
@@ -948,13 +948,13 @@
   			  </div>
 			  </div>
 			</div>
-			<div class="col-lg-12 graph collapse casosDiaMediaInteractivo">
+			<!--<div class="col-lg-12 graph collapse casosDiaMediaInteractivo">
 				<div class="d-none d-sm-block">
 					<div class="embed-responsive embed-responsive-4by3">
 						<iframe class="embed-responsive-item" src="../covid19-r/interactive/daily-cases-provinces-index.html"></iframe>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<div class="row lin switch show">
 		  <div class="col-lg-10 graph show casosDiaUltimos">
@@ -1298,6 +1298,20 @@
 			</div>
 		</div>
 	</div>
+</section>
+
+<section id="map" class="section">
+  <div class="container-xl">
+    <h2 id="provincias">Mapas <small><a href="#map" title="Enlace directo a esta sección">#</a></small></h2>
+    <div class="row">
+      <div class="col-lg-11">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/maps/animated-map-by-million-cumulative-deaths.gif" data-srcset="../covid19-r/img/spain/maps/animated-map-by-million-cumulative-deaths.gif" alt="" />
+				  <figcaption class="figure-caption text-right">Mapa de fallecidos por provincia por millón de habitantes (acumulado). Animación. <a href="../covid19-r/img/spain/maps/mapa-coropletas-muertos-per-100000.png">Ver mapa de última fecha</a></figcaption>.
+			  </figure>
+		  </div>
+    </div>
+  </div>
 </section>
 
 <section id="experimentos-provincia" class="section">

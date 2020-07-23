@@ -133,18 +133,568 @@
 
 <div class="container-xl">
   <h2 id="provincias">Por provincias <small><a href="#provincias" title="Enlace directo a esta sección">#</a></small></h2>
-  <p>Hemos pasado los <a href="https://lab.montera34.com/covid19/provincias.html" class="btn btn-info">gráficos por provincias a su propia página</a>, por si solamente quiere ver esos.</p>
   <div class="row">
-    <div class="col-lg-11">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/maps/animated-map-by-million-cumulative-deaths.gif" data-srcset="../covid19-r/img/spain/maps/animated-map-by-million-cumulative-deaths.gif" alt="" />
-				<figcaption class="figure-caption text-right">Mapa de fallecidos por provincia por millón de habitantes (acumulado). Animación. <a href="../covid19-r/img/spain/maps/mapa-coropletas-muertos-per-100000.png">Ver mapa de última fecha</a></figcaption>.
-			</figure>
-		</div>
+    <div class="col-6">
+      <ul>
+        <li><a href="#casosDiaProvincias">Casos por día</a></li>
+        <li><a href="#hospProvincias">Hospitalizaciones</a></li>
+        <li><a href="#fallecimientosDiaProvincias">Fallecidos por día</a></li>
+        <li><a href="#fallecimientos-provincia">Fallecidos acumulados</a></li>
+        <li><a href="#experimentos-provincia">Trayectorias</a></li>
+        <li><a href="#casos-provincia">Casos acumulados</a></li>
+        <li><a href="#map">Mapa</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
 <!-- provincias -->
+
+
+<!-- Casos por día ---------------------------------------->
+<section id="casosDiaProvincias" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col">Casos por día por provincia <small><a href="#casosDiaProvincias" title="Enlace directo a esta sección">#</a></small></h2>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+				  <li class="list-inline-item mb-2">Rejilla</li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosDiaUltimos" aria-expanded="false" aria-controls="casosDiaUltimos">14 días</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDia50Ultimos" aria-expanded="false" aria-controls="casosDia50Ultimos">50 días</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDia50Ultimos_uniforme" aria-expanded="false" aria-controls="casosDia50Ultimos_uniforme">50 días (uniforme)</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaTodos" aria-expanded="false" aria-controls="casosDiaTodos">Periodo completo</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaPCR" aria-expanded="false" aria-controls="casosDiaMediaPCR">Media PCR+</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaProv" aria-expanded="false" aria-controls="casosDiaMediaProv">Media Casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaAbsolutoProv" aria-expanded="false" aria-controls="casosDiaAbsolutoProv">Casos por día</button></li>
+					<!--li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultipleProv" aria-expanded="false" aria-controls="casosDiaSmallMultipleProv">Rejilla</button></li-->
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAA">Casos por CCAA</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAAdetalle" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAAdetalle">Por CCAA en detalle</button></li>
+					<!--<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaInteractivo" aria-expanded="false" aria-controls="casosDiaMediaInteractivo">Interactivo</button></li>-->
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch collapse">
+		  <div class="col-lg-10 graph show casosDiaUltimos">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día en los últimos 14 días por provincia (lineal)</figcaption>
+				</figure>
+			</div>
+		  <div class="col-lg-10 graph show casosDia50Ultimos">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día en los últimos 50 días por provincia (lineal)</figcaption>
+				</figure>
+			</div>
+		  <div class="col-lg-10 graph show casosDia50Ultimos_uniforme">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days_not-free.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days_not-free.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día en los últimos 50 días por provincia (lineal)</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaTodos">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día (ventana 7 días) por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaMediaProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día (ventana 7 días) por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaMediaPCR">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-log_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-log_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos PCR+ (ventana 7 días) por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaAbsolutoProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaSmallMultipleProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log.png" alt="" />
+					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaSmallMultiplesCCAA">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log_ccaa.png" alt="" />
+				  <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia. Small multiples usando escala logarítmica.</figcaption>
+			  </figure>
+			</div>
+			<!-- small multiple en detalle de cada comunidad autónoma -->
+      <div class="col-lg-12 graph collapse casosDiaSmallMultiplesCCAAdetalle">
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-anda.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-anda.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-anda.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Andalucía.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Aragón.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-astu.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-astu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-astu.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Asturias.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-bale.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-bale.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-bale.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Baleares.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cana.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cana.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cana.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Canarias.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cant.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cant.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cant.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Cantabria.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla-La Mancha.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-castleon.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-castleon.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-castleon.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla y León.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cata.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cata.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Cataluña.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-comu.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-comu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-comu.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de la Comunidat Valenciana.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-extr.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-extr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-extr.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Extremadura.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-gali.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-gali.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-gali.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Galicia.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-madr.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-madr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-madr.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de la Comunidad de Madrid.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-murc.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-murc.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-murc.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Murcia.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-nava.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-nava.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-nava.png" alt="" />
+				      </a>
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Navarra.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-pais.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-pais.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Euskadi / País Vasco.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-rioj.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-rioj.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-rioj.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de La Rioja.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+			</div>
+			<!--<div class="col-lg-12 graph collapse casosDiaMediaInteractivo">
+				<div class="d-none d-sm-block">
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item" src="../covid19-r/interactive/daily-cases-provinces-index.html"></iframe>
+					</div>
+				</div>
+			</div>-->
+		</div>
+		<!-------------- Lineal casos por día  -------->
+		<div class="row lin switch show">
+		  <div class="col-lg-10 graph show casosDiaUltimos">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día en los últimos días por provincia (lineal)</figcaption>
+				</figure>
+			</div>
+		  <div class="col-lg-10 graph show casosDia50Ultimos">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día en los últimos 50 días por provincia (lineal)</figcaption>
+				</figure>
+			</div>
+		  <div class="col-lg-10 graph show casosDia50Ultimos_uniforme">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days_not-free.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-50-days_not-free.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día en los últimos 50 días por provincia (lineal)</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaTodos">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día (ventana 7 días) por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaMediaPCR">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-lineal_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-lineal_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos PCR+ (ventana 7 días) por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaMediaProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media.png" alt="" />
+					<figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaAbsolutoProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaSmallMultipleProv">
+				<figure class="figure">
+					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal.png" alt="" />
+					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
+				</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDiaSmallMultiplesCCAA">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_ccaa.png" alt="" />
+				  <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia. Small multiples usando escala lineal.</figcaption>
+			  </figure>
+			</div>
+			<!-- small multiple en detalle de cada comunidad autónoma -->
+      <div class="col-lg-12 graph collapse casosDiaSmallMultiplesCCAAdetalle">
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-anda.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-anda.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-anda.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Andalucía.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-arag.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-arag.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Aragón.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-astu.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-astu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-astu.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Asturias.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-bale.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-bale.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-bale.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Baleares.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cana.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cana.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cana.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Canarias.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cant.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cant.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cant.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Cantabria.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla-La Mancha.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-castleon.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla y León.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cata.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cata.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Cataluña.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-comu.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-comu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-comu.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de la Comunidat Valenciana.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-extr.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-extr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-extr.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Extremadura.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-gali.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-gali.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-gali.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Galicia.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-madr.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-madr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-madr.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de la Comunidad de Madrid.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-murc.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-murc.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-murc.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Murcia.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-nava.png">
+  				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-nava.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-nava.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Navarra.</figcaption>
+			      </figure>
+  			  </div>
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Euskadi / País Vasco.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+        <div class="row">
+          <div class="col-lg-6">
+			      <figure class="figure">
+			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-rioj.png">
+				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-rioj.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-rioj.png" alt="" />
+				      </a>
+				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de La Rioja.</figcaption>
+			      </figure>
+  			  </div>
+			  </div>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+
+<section id="casos-provincia" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Casos acumulados por provincia <small><a href="#casos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
+			<p class="col-6 mb-3 small">Nota: Son datos de casos registrados, no tienen en cuenta los protocolos para obtención de datos (pruebas) de cada comunidad autónoma ni todos los casos “reales” que hay pero no han sido detectados.</p>
+			<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosProvinciaTotal" aria-expanded="false" aria-controls="casosProvinciaTotal">Total de casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaRelativo" aria-expanded="false" aria-controls="casosProvinciaRelativo">Casos/100.000 hab.</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiples" aria-expanded="false" aria-controls="casosProvinciaSmallMultiples">Small Multiples</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosProvinciaSmallMultiplesCCAA">Small Multiples CCAA</button></li>
+				</ul>
+			</div>
+		</header>
+		<div class="row log switch show">
+			<div class="col-lg-10 graph show casosProvinciaTotal">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosProvinciaRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiples">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Small multiples usando escala logarítmica.</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiplesCCAA">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-log.png" alt="" />
+				  <figcaption class="figure-caption text-right">Total de casos registrados por provincia agrupado por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+			  </figure>
+			</div>
+		</div>
+		<div class="row lin switch collapse">
+			<div class="col-lg-10 graph show casosProvinciaTotal">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosProvinciaRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiples">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-lineal.png" alt="" />
+				  <figcaption class="figure-caption text-right">Total de casos registrados por provincia. Small multiples usando escala lineal.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiplesCCAA">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-lineal.png" alt="" />
+				  <figcaption class="figure-caption text-right">Total de casos registrados por provincia agrupado por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
+			  </figure>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Hospitalizados  -->
 <section id="hospProvincias" class="section">
 	<div class="container-xl">
@@ -762,7 +1312,7 @@
 <section id="fallecimientos-provincia" class="section">
 	<div class="container-xl">
 		<header class="row">
-			<h2 class="col">Fallecimientos por provincia <small><a href="#fallecimientos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
+			<h2 class="col">Fallecimientos acumulados por provincia <small><a href="#fallecimientos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
 			<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
@@ -828,507 +1378,18 @@
 	</div>
 </section>
 
-<!-- Casos por día -->
-<section id="casosDiaProvincias" class="section">
-	<div class="container-xl">
-		<header class="row">
-			<h2 class="col">Casos por día por provincia <small><a href="#casosDiaProvincias" title="Enlace directo a esta sección">#</a></small></h2>
-			<div class="col-12 mb-3 scales">
-				Escala: 
-				<div class="btn-group" role="group" aria-label="Selector de escala">
-					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
-					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
-				</div>
-			</div>
-			<div class="col-12 graphs">
-				<ul class="list-inline">
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosDiaUltimos" aria-expanded="false" aria-controls="casosDiaUltimos">14 últimos días</button></li>
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaPCR" aria-expanded="false" aria-controls="casosDiaMediaPCR">PCR+</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaProv" aria-expanded="false" aria-controls="casosDiaMediaProv">Media de casos por día</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaAbsolutoProv" aria-expanded="false" aria-controls="casosDiaAbsolutoProv">Casos por día</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultipleProv" aria-expanded="false" aria-controls="casosDiaSmallMultipleProv">Small multiples</button></li>
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAA">Small Multiples por CCAA</button></li>
-				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaSmallMultiplesCCAAdetalle" aria-expanded="false" aria-controls="casosDiaSmallMultiplesCCAAdetalle">Small Multiples en detalle</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaMediaInteractivo" aria-expanded="false" aria-controls="casosDiaMediaInteractivo">Interactivo</button></li>
-				</ul>
-			</div>
-		</header>
-		<div class="row log switch collapse">
-		  <div class="col-lg-10 graph show casosDiaUltimos">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" alt="" />
-					<figcaption class="figure-caption text-right">Media de casos por día en los últimos días por provincia (lineal)</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaMediaProv">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media.png" alt="" />
-					<figcaption class="figure-caption text-right">Media de casos por día (ventana 7 días) por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaMediaPCR">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-log_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-log_media.png" alt="" />
-					<figcaption class="figure-caption text-right">Media de casos PCR+ (ventana 7 días) por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaAbsolutoProv">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log.png" alt="" />
-					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaSmallMultipleProv">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log.png" alt="" />
-					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaSmallMultiplesCCAA">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-log_ccaa.png" alt="" />
-				  <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia. Small multiples usando escala logarítmica.</figcaption>
-			  </figure>
-			</div>
-			<!-- small multiple en detalle de cada comunidad autónoma -->
-      <div class="col-lg-12 graph collapse casosDiaSmallMultiplesCCAAdetalle">
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-anda.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-anda.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-anda.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Andalucía.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Aragón.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-astu.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-astu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-astu.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Asturias.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-bale.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-bale.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-bale.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Baleares.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cana.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cana.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cana.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Canarias.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cant.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cant.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cant.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Cantabria.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla-La Mancha.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-castleon.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-castleon.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-castleon.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla y León.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cata.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cata.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Cataluña.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-comu.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-comu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-comu.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de la Comunidat Valenciana.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-extr.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-extr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-extr.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Extremadura.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-gali.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-gali.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-gali.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Galicia.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-madr.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-madr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-madr.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de la Comunidad de Madrid.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-murc.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-murc.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-murc.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Murcia.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-nava.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-nava.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-nava.png" alt="" />
-				      </a>
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Navarra.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-pais.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-pais.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Euskadi / País Vasco.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-rioj.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-rioj.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-rioj.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de La Rioja.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-			</div>
-			<div class="col-lg-12 graph collapse casosDiaMediaInteractivo">
-				<div class="d-none d-sm-block">
-					<div class="embed-responsive embed-responsive-4by3">
-						<iframe class="embed-responsive-item" src="../covid19-r/interactive/daily-cases-provinces-index.html"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row lin switch show">
-		  <div class="col-lg-10 graph show casosDiaUltimos">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_last-days.png" alt="" />
-					<figcaption class="figure-caption text-right">Media de casos por día en los últimos días por provincia (lineal)</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaMediaPCR">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-lineal_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-dia-provincia-media-superpuesto-lineal_media.png" alt="" />
-					<figcaption class="figure-caption text-right">Media de casos PCR+ (ventana 7 días) por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaMediaProv">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media.png" alt="" />
-					<figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaAbsolutoProv">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal.png" alt="" />
-					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaSmallMultipleProv">
-				<figure class="figure">
-					<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal.png" alt="" />
-					<figcaption class="figure-caption text-right">Casos por día por provincia.</figcaption>
-				</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosDiaSmallMultiplesCCAA">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_ccaa.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-lineal_ccaa.png" alt="" />
-				  <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia. Small multiples usando escala lineal.</figcaption>
-			  </figure>
-			</div>
-			<!-- small multiple en detalle de cada comunidad autónoma -->
-      <div class="col-lg-12 graph collapse casosDiaSmallMultiplesCCAAdetalle">
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-anda.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-anda.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-anda.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Andalucía.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-arag.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-arag.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores por provincia de Aragón.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-astu.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-astu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-astu.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Asturias.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-bale.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-bale.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-bale.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Baleares.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cana.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cana.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cana.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Canarias.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cant.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cant.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cant.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Cantabria.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla-La Mancha.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-castleon.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-castleon.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Castilla y León.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cata.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cast.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-cata.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Cataluña.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-comu.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-comu.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-comu.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de la Comunidat Valenciana.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-extr.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-extr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-extr.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Extremadura.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-gali.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-gali.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-gali.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Galicia.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-madr.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-madr.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-madr.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de la Comunidad de Madrid.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-murc.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-murc.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-murc.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Murcia.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-nava.png">
-  				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-nava.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-nava.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de Navarra.</figcaption>
-			      </figure>
-  			  </div>
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de provincias de Euskadi / País Vasco.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-        <div class="row">
-          <div class="col-lg-6">
-			      <figure class="figure">
-			        <a href="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-rioj.png">
-				        <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-rioj.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-rioj.png" alt="" />
-				      </a>
-				      <figcaption class="figure-caption text-right">Media de casos por día en los 7 días anteriores de La Rioja.</figcaption>
-			      </figure>
-  			  </div>
-			  </div>
-			</div>
-		</div>
-		</div>
-	</div>
-</section>
-
-<section id="casos-provincia" class="section">
-	<div class="container-xl">
-		<header class="row">
-			<h2 class="col-12">Número de casos registrados por provincia <small><a href="#casos-provincia" title="Enlace directo a esta sección">#</a></small></h2>
-			<p class="col-6 mb-3 small">Nota: Son datos de casos registrados, no tienen en cuenta los protocolos para obtención de datos (pruebas) de cada comunidad autónoma ni todos los casos “reales” que hay pero no han sido detectados.</p>
-			<div class="col-12 mb-3 scales">
-				Escala: 
-				<div class="btn-group" role="group" aria-label="Selector de escala">
-					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
-					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
-				</div>
-			</div>
-			<div class="col-12 graphs">
-				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosProvinciaTotal" aria-expanded="false" aria-controls="casosProvinciaTotal">Total de casos</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaRelativo" aria-expanded="false" aria-controls="casosProvinciaRelativo">Casos/100.000 hab.</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiples" aria-expanded="false" aria-controls="casosProvinciaSmallMultiples">Small Multiples</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosProvinciaSmallMultiplesCCAA">Small Multiples CCAA</button></li>
-				</ul>
-			</div>
-		</header>
-		<div class="row log switch show">
-			<div class="col-lg-10 graph show casosProvinciaTotal">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala logarítmica</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosProvinciaRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala logarítmica</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiples">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-log.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Small multiples usando escala logarítmica.</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiplesCCAA">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-log.png" alt="" />
-				  <figcaption class="figure-caption text-right">Total de casos registrados por provincia agrupado por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
-			  </figure>
-			</div>
-		</div>
-		<div class="row lin switch collapse">
-			<div class="col-lg-10 graph show casosProvinciaTotal">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala lineal</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosProvinciaRelativo">
-			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
-				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala lineal</figcaption>
-			</figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiples">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-lineal.png" alt="" />
-				  <figcaption class="figure-caption text-right">Total de casos registrados por provincia. Small multiples usando escala lineal.</figcaption>
-			  </figure>
-			</div>
-			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiplesCCAA">
-			  <figure class="figure">
-				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-region-grouped-lineal.png" alt="" />
-				  <figcaption class="figure-caption text-right">Total de casos registrados por provincia agrupado por comunidad autónoma. Small multiples usando escala logarítmica.</figcaption>
-			  </figure>
-			</div>
-		</div>
-	</div>
+<section id="map" class="section">
+  <div class="container-xl">
+    <h2 id="provincias">Mapas <small><a href="#map" title="Enlace directo a esta sección">#</a></small></h2>
+    <div class="row">
+      <div class="col-lg-11">
+		    <figure class="figure">
+			    <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/maps/animated-map-by-million-cumulative-deaths.gif" data-srcset="../covid19-r/img/spain/maps/animated-map-by-million-cumulative-deaths.gif" alt="" />
+			    <figcaption class="figure-caption text-right">Mapa de fallecidos por provincia por millón de habitantes (acumulado). Animación. <a href="../covid19-r/img/spain/maps/mapa-coropletas-muertos-per-100000.png">Ver mapa de última fecha</a></figcaption>.
+		    </figure>
+	    </div>
+    </div>
+  </div>
 </section>
 
 <section id="experimentos-provincia" class="section">

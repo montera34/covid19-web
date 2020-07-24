@@ -598,8 +598,8 @@
 			<div class="col-12 mb-3 scales">
 				Escala: 
 				<div class="btn-group" role="group" aria-label="Selector de escala">
-					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
-					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch" data-target="log" aria-expanded="false" aria-controls="log">Logarítmica</button>
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
 				</div>
 			</div>
 			<div class="col-12 graphs">
@@ -621,10 +621,16 @@
 				<figcaption class="figure-caption text-right">Total de casos PCR+ por provincia. Escala lineal</figcaption>
 			</figure>
 			</div>
-			<div class="col-lg-10 graph show casosProvinciaTotal">
+			<div class="col-lg-10 graph collapse casosProvinciaTotal">
 			<figure class="figure">
 				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala logarítmica</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosPCRProvinciaRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-pcr-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-pcr-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos PCR+ por cada 100.000 habitantes. Escala lineal</figcaption>
 			</figure>
 			</div>
 			<div class="col-lg-10 graph collapse casosProvinciaRelativo">
@@ -653,7 +659,7 @@
 				<figcaption class="figure-caption text-right">Total de casos PCR+ por provincia. Escala lineal</figcaption>
 			</figure>
 			</div>
-			<div class="col-lg-10 graph show casosProvinciaTotal">
+			<div class="col-lg-10 graph collapse casosProvinciaTotal">
 			<figure class="figure">
 				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala lineal</figcaption>
@@ -661,7 +667,7 @@
 			</div>
 			<div class="col-lg-10 graph collapse casosPCRProvinciaRelativo">
 			<figure class="figure">
-				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-pcr-por-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-pcr-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-pcr-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-pcr-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Casos PCR+ por cada 100.000 habitantes. Escala lineal</figcaption>
 			</figure>
 			</div>

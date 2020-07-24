@@ -604,14 +604,23 @@
 			</div>
 			<div class="col-12 graphs">
 				<ul class="list-inline">
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosProvinciaTotal" aria-expanded="false" aria-controls="casosProvinciaTotal">Total de casos</button></li>
+				  <li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosPCRProvinciaTotal" aria-expanded="false" aria-controls="casosPCRProvinciaTotal">Casos PCR+</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosProvinciaTotal" aria-expanded="false" aria-controls="casosProvinciaTotal">Casos</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosPCRProvinciaRelativo" aria-expanded="false" aria-controls="casosPCRProvinciaRelativo">Casos PCR+/100.000 hab.</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaRelativo" aria-expanded="false" aria-controls="casosProvinciaRelativo">Casos/100.000 hab.</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiples" aria-expanded="false" aria-controls="casosProvinciaSmallMultiples">Small Multiples</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosProvinciaSmallMultiplesCCAA">Small Multiples CCAA</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaIncidencia14" aria-expanded="false" aria-controls="casosProvinciaIncidencia14">Incidencia 14 días</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiples" aria-expanded="false" aria-controls="casosProvinciaSmallMultiples">Rejilla</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosProvinciaSmallMultiplesCCAA" aria-expanded="false" aria-controls="casosProvinciaSmallMultiplesCCAA">Rejilla CCAA</button></li>
 				</ul>
 			</div>
 		</header>
-		<div class="row log switch show">
+		<div class="row log switch">
+			<div class="col-lg-10 graph show casosPCRProvinciaTotal">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-provincia-superpuesto-log.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos PCR+ por provincia. Escala lineal</figcaption>
+			</figure>
+			</div>
 			<div class="col-lg-10 graph show casosProvinciaTotal">
 			<figure class="figure">
 				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-log.png" alt="" />
@@ -637,17 +646,35 @@
 			  </figure>
 			</div>
 		</div>
-		<div class="row lin switch collapse">
+		<div class="row lin switch show">
+			<div class="col-lg-10 graph show casosPCRProvinciaTotal">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-PCR-por-provincia-superpuesto-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Total de casos PCR+ por provincia. Escala lineal</figcaption>
+			</figure>
+			</div>
 			<div class="col-lg-10 graph show casosProvinciaTotal">
 			<figure class="figure">
 				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Total de casos registrados por provincia. Escala lineal</figcaption>
 			</figure>
 			</div>
+			<div class="col-lg-10 graph collapse casosPCRProvinciaRelativo">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-pcr-por-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-pcr-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
+				<figcaption class="figure-caption text-right">Casos PCR+ por cada 100.000 habitantes. Escala lineal</figcaption>
+			</figure>
+			</div>
 			<div class="col-lg-10 graph collapse casosProvinciaRelativo">
 			<figure class="figure">
 				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-registrados-por-provincia-superpuesto-per-cienmil-lineal.png" alt="" />
 				<figcaption class="figure-caption text-right">Casos registrados por cada 100.000 habitantes. Escala lineal</figcaption>
+			</figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosProvinciaIncidencia14">
+			<figure class="figure">
+				<img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/covid19_incidencia-PCR-14dias-provincia-superpuesto-lineal-per-cienmil.png" data-srcset="../covid19-r/img/spain/provincias/covid19_incidencia-PCR-14dias-provincia-superpuesto-lineal-per-cienmil.png" alt="" />
+				<figcaption class="figure-caption text-right">Incidencia 14 días: casos PCR+ en los últimos 14 días por cada 100.000 habitantes. Escala lineal</figcaption>
 			</figure>
 			</div>
 			<div class="col-lg-10 graph collapse casosProvinciaSmallMultiples">

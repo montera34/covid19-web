@@ -89,6 +89,10 @@
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDia" aria-expanded="false" aria-controls="casosDia">Casos diarios</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospProv" aria-expanded="false" aria-controls="hospProv">Hospitalizados</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="muertesDia" aria-expanded="false" aria-controls="muertesDia">Fallecidos por día</button></li>
+					<li class="list-inline-item mb-2">Casos por municipio</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosMunip" aria-expanded="false" aria-controls="casosMunip">Superpuesto</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosMunipRejilla1" aria-expanded="false" aria-controls="casosMunipRejilla1">Escala libre</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosMunipRejilla2" aria-expanded="false" aria-controls="casosMunipRejilla2">Escala unicorme</button></li>
 				</ul>
 			</div>
 		</header>
@@ -103,7 +107,7 @@
 			<div class="col-lg-10 graph collapse casosDia">
 			  <figure class="figure">
 				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
-				  <figcaption class="figure-caption text-right">Casos por día.</figcaption>
+				  <figcaption class="figure-caption text-right">Casos PCR+ por día.</figcaption>
 			  </figure>
 			</div>
 			<div class="col-lg-10 graph collapse hospProv">
@@ -116,6 +120,24 @@
 			  <figure class="figure">
 				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
 				  <figcaption class="figure-caption text-right">Fallecidos por día.</figcaption>
+			  </figure>
+			</div>
+      <div class="col-lg-10 graph collapse casosMunip">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/euskadi/covid19_casos-municipios-pais-vasco.png" data-srcset="../covid19-r/img/spain/euskadi/covid19_casos-municipios-pais-vasco.png" alt="" />
+				  <figcaption class="figure-caption text-right">Casos PCR+ por día por municipio.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosMunipRejilla1">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/euskadi/covid19_casos-municipios-pais-vasco_rejilla.png" data-srcset="../covid19-r/img/spain/euskadi/covid19_casos-municipios-pais-vasco_rejilla.png" alt="" />
+				  <figcaption class="figure-caption text-right">Casos PCR+ por día por municipio.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosMunipRejilla2">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/euskadi/covid19_casos-municipios-pais-vasco_rejilla_not-free.png" data-srcset="../covid19-r/img/spain/euskadi/covid19_casos-municipios-pais-vasco_rejilla_not-free.png" alt="" />
+				  <figcaption class="figure-caption text-right">Casos PCR+ por día por municipio.</figcaption>
 			  </figure>
 			</div>
 		</div>

@@ -72,6 +72,57 @@
 </div>
 </div>
 
+<!------- Miscelanea --------->
+<section id="varios" class="section">
+	<div class="container-xl">
+		<header class="row">
+			<h2 class="col-12">Casos, hospitalizados, fallecidos<small><a href="#varios" title="Enlace directo a esta sección">#</a></small></h2>
+			<!--<div class="col-12 mb-3 scales">
+				Escala: 
+				<div class="btn-group" role="group" aria-label="Selector de escala">
+					<button type="button" class="btn btn-sm btn-info btn-switch active" data-target="lin" aria-expanded="false" aria-controls="lin">Lineal</button>
+				</div>
+			</div>-->
+			<div class="col-12 graphs">
+				<ul class="list-inline">
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosDia50" aria-expanded="false" aria-controls="casosDia50">Casos diarios (50 día)</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDia" aria-expanded="false" aria-controls="casosDia">Casos diarios</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospProv" aria-expanded="false" aria-controls="hospProv">Hospitalizados</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospIngresados" aria-expanded="false" aria-controls="muertesDia">Fallecidos por día</button></li>
+				</ul>
+			</div>
+		</header>
+
+		<div class="row lineal switch show">
+			<div class="col-lg-10 graph show casosDia50">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal-last50-media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal-last50-media-pais.png" alt="" />
+				  <figcaption class="figure-caption text-right">Casos por día en los 50 últimos días.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse casosDia">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
+				  <figcaption class="figure-caption text-right">Casos por día.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse hospProv">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
+				  <figcaption class="figure-caption text-right">Hospitalizados en planta.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse muertesDia">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media-pais.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media-pais.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecidos por día.</figcaption>
+			  </figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--- Hospitales ----------------->
 <section id="casos" class="section">
 	<div class="container-xl">
 		<header class="row">
@@ -202,6 +253,17 @@
 				$(this).addClass('active')
 			}		
 		})
+		$('#varios .btn-switch').on('click',function() {
+			target='#varios .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#varios .switch').collapse('hide')
+				$(target).collapse('show')
+				$('#varios .scales .active').removeClass('active')
+				$(this).addClass('active')
+			}		
+		})
 		// fade in and out graphs
 		$('#casos .btn-collapse').on('click',function() {
 
@@ -212,6 +274,18 @@
 				$('#casos .graph').collapse('hide')
 				$(target).collapse('show')
 				$('#casos .graphs .active').removeClass('active')
+				$(this).addClass('active')
+			}
+		})
+		$('#varios .btn-collapse').on('click',function() {
+
+			target='#varios .'+$(this).attr('data-target')
+			if ( $(target).hasClass('show') ) {
+			}
+			else {
+				$('#varios .graph').collapse('hide')
+				$(target).collapse('show')
+				$('#varios .graphs .active').removeClass('active')
 				$(this).addClass('active')
 			}
 		})

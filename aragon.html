@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Propagación del coronavirus en Euskadi</title>
+	<title>Propagación del coronavirus en Aragón</title>
 
 	<!-- generic meta -->
 	<meta content="Montera34" name="author" />
@@ -76,13 +76,29 @@
 <section id="ccaa" class="section">
   <div class="container-xl">
     <header class="row">
-	    <h2 class="col-12">Otras comunidades autónomas</h2>
+	    <h2 class="col-12">Otras comunidades autónomas por provincias</h2>
 	    <div class="col-12 graphs">
 		    <ul class="list-inline">
+		      <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="provincias.html#casosDiaProvincias">Todas las provincias</a> | </li>
 		      <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="andalucia.html#varios">Andalucía</a></li>
+		      <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="asturias.html#varios">Asturias</a></li>
 			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse active" href="aragon.html#varios">Aragón</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="baleares.html#varios">Baleares</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="canarias.html#varios">Canarias</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="cantabria.html#varios">Cantabria</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="castillalamancha.html#varios">Castilla-La Mancha</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="castillaleon.html#varios">Castilla y León</a></li>
 			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="cat.html#varios">Catalunya</a></li>
 			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="euskadi.html#varios">Euskadi / País Vasco</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="extremadura.html#varios">Extremadura</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="galicia.html#varios">Galicia</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="madrid.html#varios">Madrid</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="murcia.html#varios">Murcia</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="navarra.html#varios">Navarra</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="valencia.html#varios">C. Valenciana</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="rioja.html#varios">La Rioja</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="ceuta.html#varios">Ceuta</a></li>
+			    <li class="list-inline-item mb-2"><a class="btn btn-warning btn-sm btn-collapse" href="melilla.html#varios">Melilla</a></li>
 		    </ul>
 	    </div>
     </header>
@@ -104,8 +120,10 @@
 				<ul class="list-inline">
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosDia50" aria-expanded="false" aria-controls="casosDia50">Casos diarios (50 día)</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDia" aria-expanded="false" aria-controls="casosDia">Casos diarios</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaLog" aria-expanded="false" aria-controls="casosDiaLog">Casos diarios (log)</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospProv" aria-expanded="false" aria-controls="hospProv">Hospitalizados</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="muertesDia" aria-expanded="false" aria-controls="muertesDia">Fallecidos por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="muertesDia" aria-expanded="false" aria-controls="muertesDia">Fallecidos/día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="muertesDiaLog" aria-expanded="false" aria-controls="muertesDiaLog">Fallecidos/día (log)</button></li>
 				</ul>
 			</div>
 		</header>
@@ -123,6 +141,12 @@
 				  <figcaption class="figure-caption text-right">Casos PCR+ por día.</figcaption>
 			  </figure>
 			</div>
+			<div class="col-lg-10 graph collapse casosDiaLog">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-arag.png" alt="" />
+				  <figcaption class="figure-caption text-right">Casos PCR+ por día (escala logarítmica).</figcaption>
+			  </figure>
+			</div>
 			<div class="col-lg-10 graph collapse hospProv">
 			  <figure class="figure">
 				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-arag.png" alt="" />
@@ -135,9 +159,16 @@
 				  <figcaption class="figure-caption text-right">Fallecidos por día.</figcaption>
 			  </figure>
 			</div>
+			<div class="col-lg-10 graph collapse muertesDiaLog">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log_media-arag.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log_media-arag.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecidos por día (escala logarítmica).</figcaption>
+			  </figure>
+			</div>
 		</div>
 	</div>
 </section>
+<!-- End Miscelanea ------------->
 
 <footer>
 	<div class="container-xl mt-5 pt-2 border-top">

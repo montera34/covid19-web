@@ -105,8 +105,10 @@
 				<ul class="list-inline">
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse active" type="button" data-target="casosDia50" aria-expanded="false" aria-controls="casosDia50">Casos diarios (50 día)</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDia" aria-expanded="false" aria-controls="casosDia">Casos diarios</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="casosDiaLog" aria-expanded="false" aria-controls="casosDiaLog">Casos diarios (log)</button></li>
 					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="hospProv" aria-expanded="false" aria-controls="hospProv">Hospitalizados</button></li>
-					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="muertesDia" aria-expanded="false" aria-controls="muertesDia">Fallecidos por día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="muertesDia" aria-expanded="false" aria-controls="muertesDia">Fallecidos/día</button></li>
+					<li class="list-inline-item mb-2"><button class="btn btn-warning btn-sm btn-collapse" type="button" data-target="muertesDiaLog" aria-expanded="false" aria-controls="muertesDiaLog">Fallecidos/día (log)</button></li>
 				</ul>
 			</div>
 		</header>
@@ -124,6 +126,12 @@
 				  <figcaption class="figure-caption text-right">Casos PCR+ por día.</figcaption>
 			  </figure>
 			</div>
+			<div class="col-lg-10 graph collapse casosDiaLog">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cata.png" data-srcset="../covid19-r/img/spain/provincias/covid19_casos-por-dia-provincia-media-superpuesto-log_media-cata.png" alt="" />
+				  <figcaption class="figure-caption text-right">Casos PCR+ por día (escala logarítmica).</figcaption>
+			  </figure>
+			</div>
 			<div class="col-lg-10 graph collapse hospProv">
 			  <figure class="figure">
 				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cata.png" data-srcset="../covid19-r/img/spain/provincias/covid19_hosp-por-dia-provincia-media-superpuesto-lineal_media-cata.png" alt="" />
@@ -134,6 +142,12 @@
 			  <figure class="figure">
 				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media-cata.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-lineal_media-cata.png" alt="" />
 				  <figcaption class="figure-caption text-right">Fallecidos por día.</figcaption>
+			  </figure>
+			</div>
+			<div class="col-lg-10 graph collapse muertesDiaLog">
+			  <figure class="figure">
+				  <img class="lazy figure-img img-fluid" src="img/tmp.jpg" data-src="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log_media-cata.png" data-srcset="../covid19-r/img/spain/provincias/covid19_muertes-por-dia-provincia-media-superpuesto-log_media-cata.png" alt="" />
+				  <figcaption class="figure-caption text-right">Fallecidos por día (escala logarítmica).</figcaption>
 			  </figure>
 			</div>
 		</div>
